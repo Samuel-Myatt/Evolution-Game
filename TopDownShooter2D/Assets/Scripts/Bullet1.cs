@@ -9,7 +9,7 @@ public class Bullet1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Enemy")
         {
             other.GetComponent<EnemyController>().TakeDamage(dmg);
             Destroy(bullet);

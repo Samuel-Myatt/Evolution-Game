@@ -19,8 +19,9 @@ public class WaveSpawner : MonoBehaviour
     }
 
     public Wave[] waves;
+    public Transform[] spawnPoints;
     private int nextWave = 0;
-
+    public int doubleEnemies = 2;
     
 
     public float waveDelay = 5f;
@@ -34,14 +35,21 @@ public class WaveSpawner : MonoBehaviour
     {
         // sets the default countdown to the time in between waves
         countDown = waveDelay;
+        if (spawnPoints.Length == 0)
+        {
+            Debug.LogError("NO SPAWN POINTS");
+        }
     }
     private void Update()
     {
+        // checks to see if the player is waiting for the next round
         if (state == SpawnState.waiting)
         {
-            if (!enemiesAlive())
+            // checks to see if there are any enemies alive in the scene
+            if (!EnemiesAlive())
             {
-                Debug.Log("Completed");
+                StartNewRound();// calls start a new round
+                
             }
             else
             {
@@ -55,7 +63,7 @@ public class WaveSpawner : MonoBehaviour
             // if the system is not already spawning 
             if (state != SpawnState.spawning)
             {
-                //starts spawning
+                //starts spawning enemies in the wave
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
         }
@@ -65,15 +73,44 @@ public class WaveSpawner : MonoBehaviour
             countDown -= Time.deltaTime;
         }
     }
-    bool enemiesAlive()
+    void StartNewRound()
     {
-        searchCountDown -= Time.deltaTime;
+        
+        state = SpawnState.counting;// sets the state to counting before the next round starts
+
+        // resets the timer
+        countDown = waveDelay;
+        
+        //makes the game loop
+        if(nextWave+ 1 > waves.Length - 1)
+        {
+            nextWave = 0;
+            
+            Debug.Log("All waves complete... Looping");
+        }
+        else
+        {
+            nextWave++;// increments the wave index
+        }
+        
+    }
+
+    bool EnemiesAlive()
+    {
+        
+        searchCountDown -= Time.deltaTime;// checks to see if any enemies are alive every second
         if (searchCountDown <= 0)
         {
-            searchCountDown = 1f;
-            if (GameObject.FindGameObjectsWithTag("Enemy") == null)
+            searchCountDown = 1f;// makes the timer loop
+
+            if (GameObject.FindGameObjectWithTag("Enemy") == null)// checks to see enemy tags
             {
-                return false;
+               
+                return false;// returns false as there are no enemies alive
+            }
+            else
+            {
+                //Debug.Log("EnemyFound");
             }
         }
         return true;
@@ -96,15 +133,19 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(1f / _wave.spawnRate);
         }
 
-        state = SpawnState.waiting;
+        state = SpawnState.waiting;// makes the state waiting until the player has killed all the enemies
 
         yield break;
     }
 
     void SpawnEnemy(Transform _enemy)
     {
-        Debug.Log("Spawning Enemy: " + _enemy.name);
-        Instantiate(_enemy, transform.position, transform.rotation);
+        //Debug.Log("Spawning Enemy: " + _enemy.name);
+
+        
+        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(_enemy, sp.position, sp.rotation);// spawns the enemy at a random spawn point
+       
         
     }
 
