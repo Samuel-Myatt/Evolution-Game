@@ -67,6 +67,16 @@ public class EnemyController : MonoBehaviour
 
             }
         }
+        if (other.transform.tag == "Player")
+        {
+            timeBetweenAttacks -= Time.deltaTime;
+            if (timeBetweenAttacks <= 0)
+            {
+                Debug.Log("Attack");
+                other.GetComponent<PlayerController>().TakeDamage(dmg);
+                timeBetweenAttacks = 2f;
+            }
+        }
     }
    /* void DealDamage()
     {

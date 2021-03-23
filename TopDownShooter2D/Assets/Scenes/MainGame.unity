@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 794331336}
   - component: {fileID: 794331335}
   - component: {fileID: 794331339}
+  - component: {fileID: 794331340}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -420,6 +421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
   rb: {fileID: 794331336}
+  health: 0
+  maxHealth: 100
   speed: 2
 --- !u!50 &794331336
 Rigidbody2D:
@@ -523,6 +526,32 @@ MonoBehaviour:
   bullet: {fileID: 8978826770479696154, guid: 0fe57ab577e28fd4c84be498982acd97, type: 3}
   weaponFirePoint: {fileID: 2090434667}
   bulletForce: 20
+--- !u!61 &794331340
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794331334}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5}
+  m_EdgeRadius: 0
 --- !u!1 &831961849
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +600,7 @@ MonoBehaviour:
   - {fileID: 80030032}
   - {fileID: 625304865}
   doubleEnemies: 2
-  waveDelay: 5
+  waveDelay: 2
   countDown: 0
   state: 2
 --- !u!4 &831961851

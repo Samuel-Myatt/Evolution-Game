@@ -11,15 +11,25 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public float health;
+    public float maxHealth = 100f;
+
     public float speed = 2f;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        health = maxHealth;
+    }
     void Update()
     {
         mouseAim = camera.ScreenToWorldPoint(Input.mousePosition);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     void FixedUpdate()
     {
@@ -30,5 +40,9 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(lookDirection.y,lookDirection.x) * Mathf.Rad2Deg - 90f;
 
         rb.rotation = angle;
+    }
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
     }
 }
