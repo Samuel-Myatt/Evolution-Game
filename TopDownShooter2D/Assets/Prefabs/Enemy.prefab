@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2273397032319868076}
   - component: {fileID: 3178610073942446017}
   - component: {fileID: 6940593414803107132}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: 2234f68e12d06164bb6270898f7b91c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9a86eb434113849ac6981fa2e79326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
 --- !u!61 &2273397032319868076
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,8 +162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 100
+  dmg: 25
   speed: 20
   egg: {fileID: 3250187098657985636, guid: d0cae3b2d163434489b755c3bf4c5f85, type: 3}
+  timeBetweenAttacks: 2
 --- !u!61 &6940593414803107132
 BoxCollider2D:
   m_ObjectHideFlags: 0
