@@ -163,7 +163,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   dmg: 25
-  speed: 20
+  speed: 10
   egg: {fileID: 3250187098657985636, guid: d0cae3b2d163434489b755c3bf4c5f85, type: 3}
   timeBetweenAttacks: 2
 --- !u!61 &6940593414803107132

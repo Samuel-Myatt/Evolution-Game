@@ -16,6 +16,16 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 2f;
 
+    public float dashDistance;
+    private float dashCoolDown = 1f;
+
+    public int skillPoints = 0;
+    public bool dashUnlocked = false;
+    bool dashing = false;
+
+    
+
+   
     private void Start()
     {
         health = maxHealth;
@@ -30,19 +40,46 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& dashUnlocked)
+        {
+            dashing = true;
+        }
     }
     void FixedUpdate()
     {
-        Vector2 lookDirection = mouseAim - rb.position;
+        HandleMovement();
 
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        if (dashing)
+        {
+            DashAbility();
+        }
 
-        float angle = Mathf.Atan2(lookDirection.y,lookDirection.x) * Mathf.Rad2Deg - 90f;
 
-        rb.rotation = angle;
     }
     public void TakeDamage(float damage)
     {
         health -= damage;
+    }
+    public void HandleMovement()
+    {
+
+        Vector2 lookDirection = mouseAim - rb.position;
+
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+
+        rb.rotation = angle;
+
+        
+    }
+    
+
+    public void DashAbility()
+    {
+       Debug.Log("Dash");
+       dashDistance = 100f;
+       rb.MovePosition(rb.position + movement * dashDistance * Time.fixedDeltaTime);
+        dashing = false;
     }
 }

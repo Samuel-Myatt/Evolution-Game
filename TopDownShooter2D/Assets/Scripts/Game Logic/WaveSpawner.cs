@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     private int nextWave = 0;
     public int doubleEnemies = 2;
-    
+
+    public GameObject skillTreeUI;
 
     public float waveDelay = 5f;
     public float countDown;
@@ -48,6 +50,7 @@ public class WaveSpawner : MonoBehaviour
             // checks to see if there are any enemies alive in the scene
             if (!EnemiesAlive())
             {
+
                 StartNewRound();// calls start a new round
                 
             }
@@ -75,7 +78,8 @@ public class WaveSpawner : MonoBehaviour
     }
     void StartNewRound()
     {
-        
+        IncreaseLevel();
+        OpenSkillMenu();
         state = SpawnState.counting;// sets the state to counting before the next round starts
 
         // resets the timer
@@ -90,6 +94,7 @@ public class WaveSpawner : MonoBehaviour
         }
         else
         {
+            
             nextWave++;// increments the wave index
         }
         
@@ -144,10 +149,20 @@ public class WaveSpawner : MonoBehaviour
 
         
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        sp.position = sp.position + new Vector3(0.0f, 0.0f, 180f);
+        //sp.position = sp.position + new Vector3(0.0f, 0.0f, 0.0f);
         Instantiate(_enemy, sp.position, sp.rotation);// spawns the enemy at a random spawn point
        
         
+    }
+    void OpenSkillMenu()
+    {
+        skillTreeUI.GetComponent<SkillTreeUI>().SkillTreeActive();
+
+    }
+    void IncreaseLevel()
+    {
+        skillTreeUI.GetComponent<SkillTreeUI>().levelPoints +=1;
+
     }
 
 }

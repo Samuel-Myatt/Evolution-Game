@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     Vector2 movement;
     public float timeBetweenAttacks = 2f;
+    
 
     private void Start()
     {
