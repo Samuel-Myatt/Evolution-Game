@@ -11,6 +11,7 @@ public class Bullet1 : MonoBehaviour
     {
         if (other.transform.tag == "Enemy")
         {
+            Destroy(bullet);
             other.GetComponent<EnemyController>().TakeDamage(dmg);
             Destroy(bullet);
         }

@@ -81,7 +81,7 @@ public class SkillTreeUI : MonoBehaviour
     {
         if (levelPoints >= 1)
         {
-            player.GetComponent<PlayerController>().health = player.GetComponent<PlayerController>().maxHealth;
+            player.GetComponent<PlayerController>().health += 25;
             levelPoints -= 1;
 
         }
