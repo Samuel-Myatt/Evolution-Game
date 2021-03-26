@@ -23,6 +23,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     private int nextWave = 0;
     public int doubleEnemies = 2;
+    public int musicRound;
 
     public GameObject skillTreeUI;
 
@@ -78,6 +79,7 @@ public class WaveSpawner : MonoBehaviour
     }
     void StartNewRound()
     {
+        musicRound++;
         IncreaseLevel();
         OpenSkillMenu();
         state = SpawnState.counting;// sets the state to counting before the next round starts
