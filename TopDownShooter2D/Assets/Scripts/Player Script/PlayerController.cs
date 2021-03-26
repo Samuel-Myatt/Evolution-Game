@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool dashUnlocked = false;
     bool dashing = false;
 
-    
+    [SerializeField] private LayerMask dashLayerMask;//Store which layers dash collides with objects on.
 
    
     private void Start()
@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)&& dashUnlocked)
         {
             dashing = true;
+        }
+
+        //Prevent overhealing.
+        if (health > maxHealth)
+        {
+            health = maxHealth;
         }
     }
     void FixedUpdate()
@@ -77,9 +83,17 @@ public class PlayerController : MonoBehaviour
 
     public void DashAbility()
     {
-       Debug.Log("Dash");
-       dashDistance = 100f;
-       rb.MovePosition(rb.position + movement * dashDistance * Time.fixedDeltaTime);
+        Debug.Log("Dash");
+        dashDistance = 100f;
+        Vector3 dashPosition = rb.position + movement * dashDistance * Time.fixedDeltaTime;//Determine dash position assuming no obstacles.
+
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(rb.position, movement, dashDistance, dashLayerMask);//Create a raycast from the player to the dash position on all layers included in dashLayerMask.
+        if(raycastHit2D.collider != null)//If the raycast collides with anything...
+        {
+            dashPosition = raycastHit2D.point;//The dash position becomes the point of raycast collision (e.g. a wall).
+        }
+
+        rb.MovePosition(dashPosition);//Move player instantly to the dash position.
         dashing = false;
     }
 }

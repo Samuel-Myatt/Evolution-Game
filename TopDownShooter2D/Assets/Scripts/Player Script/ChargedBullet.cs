@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet1 : MonoBehaviour
+public class ChargedBullet : MonoBehaviour
 {
-    public float dmg = 50f;
+    public float dmg = 100f;
     public GameObject bullet;
 
     public float lifeDuration = 2f;//2 seconds.

@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 794331335}
   - component: {fileID: 794331339}
   - component: {fileID: 794331340}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -608,6 +608,9 @@ MonoBehaviour:
   dashDistance: 0
   skillPoints: 0
   dashUnlocked: 0
+  dashLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!50 &794331336
 Rigidbody2D:
   serializedVersion: 4
@@ -710,6 +713,9 @@ MonoBehaviour:
   bullet: {fileID: 8978826770479696154, guid: 0fe57ab577e28fd4c84be498982acd97, type: 3}
   weaponFirePoint: {fileID: 2090434667}
   bulletForce: 20
+  chargedBullet: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
+  chargedBulletUnlocked: 0
+  bulletForceCharged: 40
 --- !u!61 &794331340
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4222,7 +4228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2090434667}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
