@@ -9,7 +9,6 @@ public class EnemyController : MonoBehaviour
     public float maxHealth = 100f;
 
     public float dmg = 25f;
-    
 
 
 
@@ -18,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        
+  
         health = maxHealth;
     }
     float calculateHealth()
@@ -29,6 +28,7 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+ 
         health -= damage;
     }
 
