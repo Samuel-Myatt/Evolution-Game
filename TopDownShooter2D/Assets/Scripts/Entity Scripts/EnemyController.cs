@@ -9,6 +9,15 @@ public class EnemyController : MonoBehaviour
     public float maxHealth = 100f;
 
     public float dmg = 25f;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+    public bool dead = false;
+    public GameObject thisObject;
+=======
+>>>>>>> 99ac46c2195f20f72f4c34396b8825d7b2a4bf80
+>>>>>>> Stashed changes
 
 
 
@@ -30,15 +39,23 @@ public class EnemyController : MonoBehaviour
     {
  
         health -= damage;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && thisObject.tag != "EnemyTank")
         {
+            
             Destroy(gameObject);
+
         }
+        if(health<= 0 && thisObject.tag == "EnemyTank")
+        {
+            dead = true;
+        }
+        
 
         
     }

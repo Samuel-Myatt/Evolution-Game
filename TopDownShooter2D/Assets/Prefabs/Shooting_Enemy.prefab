@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9a22a57bc0b8f459fda5864ad1c3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   stopDis: 3
   retreatDis: 2
   maxTimeBetweenShots: 2
@@ -208,6 +208,8 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   dmg: 25
+  dead: 0
+  thisObject: {fileID: 3179637014653728209}
 --- !u!114 &4114573043397294549
 MonoBehaviour:
   m_ObjectHideFlags: 0

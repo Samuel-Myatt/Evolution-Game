@@ -111,7 +111,7 @@ public class WaveSpawner : MonoBehaviour
         {
             searchCountDown = 1f;// makes the timer loop
 
-            if (GameObject.FindGameObjectWithTag("Enemy") == null)// checks to see enemy tags
+            if (GameObject.FindGameObjectWithTag("Enemy") == null&& GameObject.FindGameObjectWithTag("EnemyTank")==null)// checks to see enemy tags
             {
                
                 return false;// returns false as there are no enemies alive

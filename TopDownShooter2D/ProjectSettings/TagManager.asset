@@ -6,8 +6,13 @@ TagManager:
   tags:
   - Enemy
   - Egg
+<<<<<<< HEAD
   - spawnPointsUI
   - Reflector
+  - EnemyTank
+=======
+  - ScreenShake
+>>>>>>> 99ac46c2195f20f72f4c34396b8825d7b2a4bf80
   layers:
   - Default
   - TransparentFX
@@ -15,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - PostProcessing
   - 
   - 
   - 
