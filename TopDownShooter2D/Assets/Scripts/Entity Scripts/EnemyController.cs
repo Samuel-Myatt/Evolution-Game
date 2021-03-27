@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public float maxHealth = 100f;
 
     public float dmg = 25f;
+    
 
 
     public bool dead = false;
