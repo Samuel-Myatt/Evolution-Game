@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public float maxHealth = 100f;
 
     public float dmg = 25f;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -18,6 +19,9 @@ public class EnemyController : MonoBehaviour
 =======
 >>>>>>> 99ac46c2195f20f72f4c34396b8825d7b2a4bf80
 >>>>>>> Stashed changes
+=======
+    
+>>>>>>> parent of 6561b03 (Merge branch 'main' of https://github.com/Samuel-Myatt/Evolution-Game into main)
 
 
 
@@ -26,7 +30,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-  
+        
         health = maxHealth;
     }
     float calculateHealth()
@@ -37,7 +41,6 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
- 
         health -= damage;
         
     }
