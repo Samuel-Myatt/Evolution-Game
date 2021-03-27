@@ -14,7 +14,7 @@ public class WaveSpawner : MonoBehaviour
     public class Wave
     {
         public int roundNum;
-        public Transform enemy;
+        public Transform[] enemy;
         public int count;
         public float spawnRate;
     }
@@ -79,9 +79,10 @@ public class WaveSpawner : MonoBehaviour
     }
     void StartNewRound()
     {
-        musicRound++;
+        
         IncreaseLevel();
         OpenSkillMenu();
+        musicRound++;
         state = SpawnState.counting;// sets the state to counting before the next round starts
 
         // resets the timer
@@ -134,7 +135,7 @@ public class WaveSpawner : MonoBehaviour
         for(int i = 0; i < _wave.count; i++)
         {
             // for each enemy spawned it calls the spawn enemy method
-            SpawnEnemy(_wave.enemy);
+            SpawnEnemy(_wave.enemy[Random.Range(0,_wave.enemy.Length)]);
 
             // waits for the delay
             yield return new WaitForSeconds(1f / _wave.spawnRate);

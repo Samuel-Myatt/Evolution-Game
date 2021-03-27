@@ -7,6 +7,7 @@ public class FireWeapon : MonoBehaviour
     public GameObject bullet;
     public Transform weaponFirePoint;
     public float bulletForce = 20f;
+    public GameObject gameObject;
 
 
     public GameObject chargedBullet;
@@ -21,7 +22,7 @@ public class FireWeapon : MonoBehaviour
             chargeTime += Time.deltaTime;//Increase chargeTime.
         }
 
-        if (Input.GetButtonUp("Fire1"))//If Fire1 is released...
+        if (Input.GetButtonUp("Fire1")&& gameObject.tag=="Player"  )//If Fire1 is released...
         {
             if(chargeTime < 1f || chargedBulletUnlocked == false)//If charged for less than 1 second OR charged bullets have not been unlocked yet...
             {
@@ -35,7 +36,13 @@ public class FireWeapon : MonoBehaviour
             chargeTime = 0f;//Reset chargeTime.
         }
     }
-    void Fire()
+    public void Fire()
+    {
+        GameObject newBullet = Instantiate(bullet, weaponFirePoint.position, weaponFirePoint.rotation);
+        Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(weaponFirePoint.up * bulletForce, ForceMode2D.Impulse);
+    }
+    public void FireEnemy()
     {
         GameObject newBullet = Instantiate(bullet, weaponFirePoint.position, weaponFirePoint.rotation);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();

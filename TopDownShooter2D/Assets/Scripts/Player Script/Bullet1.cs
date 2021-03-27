@@ -6,13 +6,21 @@ public class Bullet1 : MonoBehaviour
 {
     public float dmg = 50f;
     public GameObject bullet;
+   // public GameObject FireWeaponPoint;
+   // public Transform reflector;
+
+    //public float newBulletForce;
 
     public float lifeDuration = 2f;//2 seconds.
     private float lifeTimer;
 
+    Rigidbody2D rb;
     void Start()
     {
         lifeTimer = lifeDuration;
+        rb = this.GetComponent<Rigidbody2D>();
+
+        //newBulletForce = FireWeaponPoint.GetComponent<FireWeapon>().bulletForce;
     }
     void Update()
     {
@@ -28,11 +36,21 @@ public class Bullet1 : MonoBehaviour
     {
         if (other.transform.tag == "Enemy")
         {
-            Destroy(bullet);
+            
             other.GetComponent<EnemyController>().TakeDamage(dmg);
             Destroy(bullet);
         }
-        Destroy(bullet);
+        if (other.transform.tag == "Player")
+        {
+            
+            other.GetComponent<PlayerController>().TakeDamage(dmg);
+            Destroy(bullet);
+        }
+        if (other.transform.tag == "Reflector")
+        {
+            Destroy(bullet);// rb.AddForce(reflector.up * -newBulletForce, ForceMode2D.Impulse);
+        }
+        
     }
     private void OnCollisionEnter(Collision collision)
     {

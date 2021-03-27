@@ -13,13 +13,15 @@ public class ShootingEnemy : MonoBehaviour
     public float maxTimeBetweenShots;
     private float timeBetweenShots;
 
-    public Transform focus;
+    private Transform focus;
 
-    public GameObject bullet;
+    //public GameObject bullet;
 
 
     void Start()
     {
+
+        focus = GameObject.FindGameObjectWithTag("Player").transform;
         timeBetweenShots = maxTimeBetweenShots;
         rb = this.GetComponent<Rigidbody2D>();
     }
@@ -47,7 +49,7 @@ public class ShootingEnemy : MonoBehaviour
 
         if (timeBetweenShots <= 0)
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            this.GetComponent<FireWeapon>().FireEnemy();
             timeBetweenShots = maxTimeBetweenShots;
         }
         else

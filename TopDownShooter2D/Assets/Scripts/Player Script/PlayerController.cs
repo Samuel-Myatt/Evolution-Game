@@ -19,9 +19,20 @@ public class PlayerController : MonoBehaviour
     public float dashDistance;
     private float dashCoolDown = 1f;
 
+    public float  countdown = 5f;
+    public float  startCountdownTime = 5f;
+
+    public float bufferTimer;
+    public float startBufferTimer;
+
+
     public int skillPoints = 0;
     public bool dashUnlocked = false;
     bool dashing = false;
+    public bool reflectorActive = false;
+    public bool reflectorUnlocked = false;
+
+    public GameObject reflector;
 
     [SerializeField] private LayerMask dashLayerMask;//Store which layers dash collides with objects on.
 
@@ -29,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        countdown = startCountdownTime;
     }
     void Update()
     {
@@ -43,6 +55,26 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)&& dashUnlocked)
         {
             dashing = true;
+        }
+        if (Input.GetKeyDown(KeyCode.R)&& reflectorUnlocked&& bufferTimer>= startBufferTimer)
+        {
+            DeflectAbility();
+        }
+        if (reflectorActive)
+        {
+            countdown -= Time.deltaTime;
+        }
+        if (countdown <= 0)
+        {
+            reflector.SetActive(false);
+            reflectorActive = false;
+            
+            bufferTimer -= Time.deltaTime;
+        }
+        if (bufferTimer <= 0)
+        {
+            countdown = startCountdownTime;
+            bufferTimer = startBufferTimer;
         }
 
         //Prevent overhealing.
@@ -95,5 +127,21 @@ public class PlayerController : MonoBehaviour
 
         rb.MovePosition(dashPosition);//Move player instantly to the dash position.
         dashing = false;
+    }
+    public void DeflectAbility()
+    {
+        
+       
+        if (countdown > 0)
+        {
+            reflector.SetActive(true);
+            reflectorActive = true;
+        }
+        else
+        {
+            reflector.SetActive(false);
+            
+            reflectorActive = false;
+        }
     }
 }

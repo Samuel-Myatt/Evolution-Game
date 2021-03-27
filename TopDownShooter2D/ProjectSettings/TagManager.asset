@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Egg
+  - spawnPointsUI
+  - Reflector
   layers:
   - Default
   - TransparentFX

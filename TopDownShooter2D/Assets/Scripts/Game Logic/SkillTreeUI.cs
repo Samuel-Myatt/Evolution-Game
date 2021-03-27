@@ -43,24 +43,27 @@ public class SkillTreeUI : MonoBehaviour
 
     public void UnlockDash()
     {
+        Debug.Log("Clicked");
         if (levelPoints >= 1)
         {
             player.GetComponent<PlayerController>().dashUnlocked = true;
             levelPoints -= 1;
-            
+            Debug.Log("TheClick");
         }
     }
     public void IncreaseHealth()
     {
+
         if (levelPoints >= 1)
         {
-            player.GetComponent<PlayerController>().maxHealth+=50;
+            player.GetComponent<PlayerController>().maxHealth += 50;
             levelPoints -= 1;
 
         }
     }
     public void IncreaseSpeed()
     {
+
         if (levelPoints >= 1)
         {
             player.GetComponent<PlayerController>().speed += 2;
@@ -70,6 +73,7 @@ public class SkillTreeUI : MonoBehaviour
     }
     public void IncreaseDashSize()
     {
+
         if (levelPoints >= 1)
         {
             player.GetComponent<PlayerController>().dashDistance += 20;
@@ -79,6 +83,7 @@ public class SkillTreeUI : MonoBehaviour
     }
     public void Heal()
     {
+
         if (levelPoints >= 1)
         {
             player.GetComponent<PlayerController>().health += 25;
@@ -86,5 +91,25 @@ public class SkillTreeUI : MonoBehaviour
 
         }
     }
-}
+    public void UnlockReflector()
+    {
+        Debug.Log("Clicked");
+        if (levelPoints >= 1)
+        {
+            player.GetComponent<PlayerController>().reflectorUnlocked = true;
+            levelPoints -= 1;
+            Debug.Log("TheClick");
+        }
+    }
+    public void UnlockChargedShot()
+    {
+        Debug.Log("Clicked");
+        if (levelPoints >= 1)
+        {
+            player.GetComponent<FireWeapon>().chargedBulletUnlocked = true;
+            levelPoints -= 1;
+            Debug.Log("TheClick");
+        }
+    }
 
+}
