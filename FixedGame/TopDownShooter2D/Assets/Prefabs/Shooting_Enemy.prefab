@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d90790e17294e649b6ddd048d2745b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8978826770479696154, guid: 0fe57ab577e28fd4c84be498982acd97, type: 3}
+  bullet: {fileID: 8978826770479696154, guid: 1ecedec584d7b984894667ca6a10f4fa, type: 3}
   weaponFirePoint: {fileID: 283599510186955419}
   bulletForce: 20
   gameObject: {fileID: 3179637014653728209}

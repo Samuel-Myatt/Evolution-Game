@@ -5152,6 +5152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b906cb9f1ea8a45849eb799e540851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 50
+  dmg: 200
   bullet: {fileID: 8978826770479696154}
   lifeDuration: 2
