@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     //New dash (not blink) variables. A large amount of the code realting to dashing was created with help from Bardent https://www.youtube.com/watch?v=ylsWcc4IP3E&ab_channel=Bardent
     private bool canMove = true;//Needed to prevent player movement while dashing.
-    private bool canTurn = true;//Needed to prevent player movement while dashing.
+    private bool canTurn = true;//Needed to prevent player turning while dashing.
     private bool isDashing = false;
     public float dashTime;
     public float dashSpeed;
@@ -45,9 +45,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject reflector;
 
-    [SerializeField] private LayerMask dashLayerMask;//Store which layers dash collides with objects on.
-
-
+    
     private void Start()
     {
         health = maxHealth;
@@ -118,12 +116,15 @@ public class PlayerController : MonoBehaviour
     }
     private void AttemptToDash()
     {
-        isDashing = true;
-        dashTimeLeft = dashTime;
-        lastDash = Time.time;
+        if(lastDash + dashCoolDown < Time.time)
+        {
+            isDashing = true;
+            dashTimeLeft = dashTime;
+            lastDash = Time.time;
 
-        PlayerAfterImagePool.Instance.GetFromPool();//Place an after image.
-        lastImagePos = transform.position;
+            PlayerAfterImagePool.Instance.GetFromPool();//Place an after image.
+            lastImagePos = transform.position;
+        }
     }
     private void CheckDash()//For setting dash velocity and checking if we should be dashing or if we should stop.
     {
