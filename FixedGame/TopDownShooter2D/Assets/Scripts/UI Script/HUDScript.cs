@@ -21,8 +21,8 @@ public class HUDScript : MonoBehaviour
     float EggHP;
 
     //Grab round GameObject and Script
-    public Text RoundTime;
-    float CurrTime;
+  
+    
     //From countdown script
 
 
@@ -80,8 +80,7 @@ public class HUDScript : MonoBehaviour
         RoundNumber.text = RoundNumb.ToString();
 
         //Get Timer
-        CurrTime = GetComponent<CountDown>().currentTime;
-        RoundTime.text = CurrTime.ToString();
+        
     }
 
 }
