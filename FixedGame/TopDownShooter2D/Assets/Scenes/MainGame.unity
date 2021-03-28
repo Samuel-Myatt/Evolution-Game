@@ -9271,12 +9271,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: dashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: dashSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: reflector
       value: 
       objectReference: {fileID: 1561518252}
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: dashCoolDown
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: dashUnlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: reflectorActive
@@ -9285,6 +9297,14 @@ PrefabInstance:
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: reflectorUnlocked
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: dashLayerMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: distanceBetweenImages
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
