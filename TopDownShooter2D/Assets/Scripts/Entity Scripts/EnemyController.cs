@@ -40,6 +40,22 @@ public class EnemyController : MonoBehaviour
         
     }
 
+    public void TakeDamageOverTime(float DOT, float numberOfDOT, float delay)
+    {
+        StartCoroutine(TakeDamageOverTimeCoroutine(DOT, numberOfDOT, delay));
+    }
+
+    IEnumerator TakeDamageOverTimeCoroutine(float DOT, float numberOfDOT, float delay)
+    {
+        Debug.Log("In the IEnumerator babeeeeyy");
+        for(int i = 0; i < numberOfDOT; i++)
+        {
+            yield return new WaitForSeconds(delay);//Wait 1 second.
+            health -= DOT;
+            Debug.Log("DOT DAMAGE");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

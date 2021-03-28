@@ -6,8 +6,8 @@ public class Bullet1 : MonoBehaviour
 {
     public float dmg = 50f;
     public GameObject bullet;
-   // public GameObject FireWeaponPoint;
-   // public Transform reflector;
+    // public GameObject FireWeaponPoint;
+    // public Transform reflector;
 
     //public float newBulletForce;
 
@@ -24,9 +24,9 @@ public class Bullet1 : MonoBehaviour
     }
     void Update()
     {
-        
+
         lifeTimer -= Time.deltaTime;//Decrease lifeTimer over time.
-        if(lifeTimer <= 0f)//If bullet has run out of life time...
+        if (lifeTimer <= 0f)//If bullet has run out of life time...
         {
             Destroy(bullet);//Destroy self.
         }
@@ -34,15 +34,15 @@ public class Bullet1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "Enemy"|| other.transform.tag =="EnemyTank")
+        if (other.transform.tag == "Enemy" || other.transform.tag == "EnemyTank")
         {
-            
+
             other.GetComponent<EnemyController>().TakeDamage(dmg);
             Destroy(bullet);
         }
         if (other.transform.tag == "Player")
         {
-            
+
             other.GetComponent<PlayerController>().TakeDamage(dmg);
             Destroy(bullet);
         }
@@ -50,7 +50,7 @@ public class Bullet1 : MonoBehaviour
         {
             Destroy(bullet);// rb.AddForce(reflector.up * -newBulletForce, ForceMode2D.Impulse);
         }
-        
+
     }
     private void OnCollisionEnter(Collision collision)
     {

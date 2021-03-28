@@ -439,7 +439,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295234195}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &315088286
+=======
+--- !u!224 &382207781
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382207778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1944228226}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 152}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &422917606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 422917608}
+  - component: {fileID: 422917607}
+  m_Layer: 0
+  m_Name: PlayerAfterImagePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &422917607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422917606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0c894053b5834478fb2133491f6ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterImagePrefab: {fileID: 7937247647349803124, guid: 92a3acb6b785fb0488c93a4f7c6193ad, type: 3}
+--- !u!4 &422917608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422917606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &432802625
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6156,7 +6223,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 3250187098657991577, guid: d0cae3b2d163434489b755c3bf4c5f85, type: 3}
+=======
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: DOTBullet
+      value: 
+      objectReference: {fileID: 8978826770479696154, guid: ba909843e9313cd4099d4d91882652b0, type: 3}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: chargedBullet
+      value: 
+      objectReference: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: DOTBulletUnlocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: chargedBulletUnlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074968, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_Name
       value: Egg
       objectReference: {fileID: 0}

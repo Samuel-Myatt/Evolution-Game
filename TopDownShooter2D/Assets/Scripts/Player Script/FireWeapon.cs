@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class FireWeapon : MonoBehaviour
 {
+	public Transform weaponFirePoint;
+	
+	//Normal bullet.
     public GameObject bullet;
-    public Transform weaponFirePoint;
     public float bulletForce = 20f;
+	
     public GameObject gameObject;
 
-
+    //Charged bullet.
     public GameObject chargedBullet;
     public bool chargedBulletUnlocked = false;
     private float chargeTime = 0f;
-    public float bulletForceCharged = 40f;
+    public float chargeTimeNeeded = 1f;
+    public float chargedBulletForce = 40f;
+	
+	//DoT bullet.
+    public GameObject DOTBullet;
+    public bool DOTBulletUnlocked = false;
+    public float DOTBulletForce = 20f;
 
     void Update()
     {
@@ -22,36 +31,30 @@ public class FireWeapon : MonoBehaviour
             chargeTime += Time.deltaTime;//Increase chargeTime.
         }
 
-        if (Input.GetButtonUp("Fire1")&& gameObject.tag=="Player"  )//If Fire1 is released...
+        if (Input.GetButtonUp("Fire1") && gameObject.tag == "Player")//If Fire1 is released...
         {
-            if(chargeTime < 1f || chargedBulletUnlocked == false)//If charged for less than 1 second OR charged bullets have not been unlocked yet...
+            if(chargeTime < chargeTimeNeeded || chargedBulletUnlocked == false)//If charged for less than 1 second OR charged bullets have not been unlocked yet...
             {
-                Fire();//Normal bullet.
+                Fire(bullet, bulletForce);//Normal bullet.
             }
             else//If charged and unlocked...
             {
-                ChargeFire();//Charged bullet.
+                Fire(chargedBullet, chargedBulletForce);//Charged bullet.
             }
 
             chargeTime = 0f;//Reset chargeTime.
         }
     }
-    public void Fire()
+    void Fire(GameObject bulletType, float forceType)
     {
-        GameObject newBullet = Instantiate(bullet, weaponFirePoint.position, weaponFirePoint.rotation);
+        GameObject newBullet = Instantiate(bulletType, weaponFirePoint.position, weaponFirePoint.rotation);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(weaponFirePoint.up * bulletForce, ForceMode2D.Impulse);
+        rb.AddForce(weaponFirePoint.up * forceType, ForceMode2D.Impulse);
     }
     public void FireEnemy()
     {
         GameObject newBullet = Instantiate(bullet, weaponFirePoint.position, weaponFirePoint.rotation);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(weaponFirePoint.up * bulletForce, ForceMode2D.Impulse);
-    }
-    void ChargeFire()
-    {
-        GameObject newBullet = Instantiate(chargedBullet, weaponFirePoint.position, weaponFirePoint.rotation);
-        Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(weaponFirePoint.up * bulletForceCharged, ForceMode2D.Impulse);
     }
 }

@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& dashUnlocked)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUnlocked)
         {
             dashing = true;
         }
@@ -116,6 +116,9 @@ public class PlayerController : MonoBehaviour
     public void DashAbility()
     {
         Debug.Log("Dash");
+
+        PlayerAfterImagePool.Instance.GetFromPool();//Place an after image.
+
         dashDistance = 100f;
         Vector3 dashPosition = rb.position + movement * dashDistance * Time.fixedDeltaTime;//Determine dash position assuming no obstacles.
 
@@ -124,6 +127,11 @@ public class PlayerController : MonoBehaviour
         {
             dashPosition = raycastHit2D.point;//The dash position becomes the point of raycast collision (e.g. a wall).
         }
+
+        /*if (transform.position != dashPosition)//If the player has actually moved...
+        {
+            PlayerAfterImagePool.Instance.GetFromPool();//Place an after image.
+        }*/
 
         rb.MovePosition(dashPosition);//Move player instantly to the dash position.
         dashing = false;
