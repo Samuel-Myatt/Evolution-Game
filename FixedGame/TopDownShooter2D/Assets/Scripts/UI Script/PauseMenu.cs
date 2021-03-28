@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static HUDScript;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -25,12 +26,14 @@ public class PauseMenu : MonoBehaviour
     }
    public void Resume()
     {
+        HUDScript.EnableHUD();
         menu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
     }
     public void Pause()
     {
+        HUDScript.DisableHUD();
         menu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
