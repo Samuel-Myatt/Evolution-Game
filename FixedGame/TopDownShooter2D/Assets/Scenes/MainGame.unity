@@ -7382,6 +7382,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reflector
       objectReference: {fileID: 0}
+    - target: {fileID: 262147836031316088, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 262147836031316088, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 262147836031316089, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 46946fc79f4e6144f9dc9ff2a27f035f, type: 3}
+    - target: {fileID: 262147836031316091, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 262147836031316091, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 262147836031316091, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 262147836031316091, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 262147834356305749, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d6ceac39bbae8040857de52fdfe72d0, type: 3}
@@ -9249,6 +9277,14 @@ PrefabInstance:
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: dashUnlocked
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: reflectorActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: reflectorUnlocked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d705b71a175b7cc4bab997ebea233115, type: 3}

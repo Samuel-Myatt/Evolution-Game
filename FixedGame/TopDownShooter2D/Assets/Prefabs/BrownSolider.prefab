@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 150
+  maxHealth: 50
   dmg: 10
   dead: 0
   thisObject: {fileID: 3724952461486559921}
