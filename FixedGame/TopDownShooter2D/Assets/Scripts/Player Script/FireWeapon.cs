@@ -44,6 +44,12 @@ public class FireWeapon : MonoBehaviour
 
             chargeTime = 0f;//Reset chargeTime.
         }
+
+        if (Input.GetButtonDown("Fire2") && DOTBulletUnlocked)//If Fire2 (mouse 2) is pressed...
+        {
+            Debug.Log("RightClick");
+            Fire(DOTBullet, DOTBulletForce);//DoT bullet.
+        }
     }
     void Fire(GameObject bulletType, float forceType)
     {

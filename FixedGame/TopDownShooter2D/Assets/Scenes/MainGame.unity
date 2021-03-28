@@ -524,6 +524,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178885872}
   m_CullTransparentMesh: 1
+--- !u!1 &185622280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185622282}
+  - component: {fileID: 185622281}
+  m_Layer: 0
+  m_Name: PlayerAfterImagePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &185622281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185622280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbc1401e2eed0b4595e4953b493d877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterImagePrefab: {fileID: 603307067859255485, guid: 7cf7e5f5521afa64c97e17ce3c2a61d2, type: 3}
+--- !u!4 &185622282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185622280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197436854
 GameObject:
   m_ObjectHideFlags: 0
@@ -9159,6 +9203,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: DOTBullet
+      value: 
+      objectReference: {fileID: 8978826770479696154, guid: 39c9a64b53e186b42a3613a0449d12d4, type: 3}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 794331334}
@@ -9167,8 +9215,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
     - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: DOTBulletUnlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: chargedBulletUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074967, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9186,6 +9238,10 @@ PrefabInstance:
       propertyPath: reflector
       value: 
       objectReference: {fileID: 1561518252}
+    - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: dashUnlocked
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
 --- !u!4 &7425183188293519647 stripped

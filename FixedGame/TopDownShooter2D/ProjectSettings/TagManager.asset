@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Egg
   - ScreenShake
+  - EnemyTank
+  - spawnPointsUI
+  - Reflector
   layers:
   - Default
   - TransparentFX
@@ -43,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 526838287
     locked: 0

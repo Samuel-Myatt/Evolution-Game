@@ -116,6 +116,9 @@ public class PlayerController : MonoBehaviour
     public void DashAbility()
     {
         Debug.Log("Dash");
+
+        PlayerAfterImagePool.Instance.GetFromPool();//Place an after image.
+
         dashDistance = 100f;
         Vector3 dashPosition = rb.position + movement * dashDistance * Time.fixedDeltaTime;//Determine dash position assuming no obstacles.
 
