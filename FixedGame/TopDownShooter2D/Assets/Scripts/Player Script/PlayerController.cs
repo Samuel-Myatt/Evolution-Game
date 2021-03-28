@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public Camera camera;
 
-    Vector2 movement;
+    float horizontal;
+    float vertical;
     Vector2 mouseAim;
 
     public Rigidbody2D rb;
@@ -16,9 +17,6 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 2f;
 
-    public float dashDistance;
-    private float dashCoolDown = 1f;
-
     public float countdown = 5f;
     public float startCountdownTime = 5f;
 
@@ -27,8 +25,21 @@ public class PlayerController : MonoBehaviour
 
 
     public int skillPoints = 0;
+
     public bool dashUnlocked = false;
-    bool dashing = false;
+
+    //New dash (not blink) variables. A large amount of the code realting to dashing was created with help from Bardent https://www.youtube.com/watch?v=ylsWcc4IP3E&ab_channel=Bardent
+    private bool canMove = true;//Needed to prevent player movement while dashing.
+    private bool canTurn = true;//Needed to prevent player movement while dashing.
+    private bool isDashing = false;
+    public float dashTime;
+    public float dashSpeed;
+    public float distanceBetweenImages;
+    public float dashCoolDown;
+    private float dashTimeLeft;
+    private Vector3 lastImagePos;
+    private float lastDash = -100f;//Time since last dash (for cooldown). Set to -100 so dash is available as soon as game starts.
+
     public bool reflectorActive = false;
     public bool reflectorUnlocked = false;
 
@@ -44,17 +55,22 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        mouseAim = camera.ScreenToWorldPoint(Input.mousePosition);
-
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (canTurn)
+        {
+            mouseAim = camera.ScreenToWorldPoint(Input.mousePosition);
+        }
+        if (canMove)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+        }
         if (health <= 0)
         {
             Destroy(gameObject);
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashUnlocked)
         {
-            dashing = true;
+            AttemptToDash();
         }
         if (Input.GetKeyDown(KeyCode.R) && reflectorUnlocked && bufferTimer >= startBufferTimer)
         {
@@ -82,54 +98,62 @@ public class PlayerController : MonoBehaviour
         {
             health = maxHealth;
         }
+
+        CheckDash();
     }
     void FixedUpdate()
     {
         HandleMovement();
-
-        if (dashing)
-        {
-            DashAbility();
-        }
-
-
     }
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-    }
+
     public void HandleMovement()
     {
-
         Vector2 lookDirection = mouseAim - rb.position;
 
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        rb.velocity = new Vector2(horizontal * speed, vertical * speed);
 
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
 
         rb.rotation = angle;
-
-
     }
-
-
-    public void DashAbility()
+    private void AttemptToDash()
     {
-        Debug.Log("Dash");
+        isDashing = true;
+        dashTimeLeft = dashTime;
+        lastDash = Time.time;
 
         PlayerAfterImagePool.Instance.GetFromPool();//Place an after image.
-
-        dashDistance = 100f;
-        Vector3 dashPosition = rb.position + movement * dashDistance * Time.fixedDeltaTime;//Determine dash position assuming no obstacles.
-
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(rb.position, movement, dashDistance, dashLayerMask);//Create a raycast from the player to the dash position on all layers included in dashLayerMask.
-        if (raycastHit2D.collider != null)//If the raycast collides with anything...
+        lastImagePos = transform.position;
+    }
+    private void CheckDash()//For setting dash velocity and checking if we should be dashing or if we should stop.
+    {
+        if (isDashing)
         {
-            dashPosition = raycastHit2D.point;//The dash position becomes the point of raycast collision (e.g. a wall).
-        }
+            if(dashTimeLeft > 0)
+            {
+                canMove = false;
+                canTurn = false;
+                rb.AddForce(rb.velocity * dashSpeed);
+                dashTimeLeft -= Time.deltaTime;
 
-        rb.MovePosition(dashPosition);//Move player instantly to the dash position.
-        dashing = false;
+                if (Mathf.Abs(Vector3.Distance(transform.position, lastImagePos)) > distanceBetweenImages)
+                {
+                    PlayerAfterImagePool.Instance.GetFromPool();//Place an after image.
+                    lastImagePos = transform.position;
+                }
+            }
+
+            if (dashTimeLeft <= 0)
+            {
+                isDashing = false;
+                canMove = true;
+                canTurn = true;
+            }
+        }
+    }
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
     }
     public void DeflectAbility()
     {
