@@ -87,8 +87,7 @@ public class SkillTreeUI : MonoBehaviour
 
         if (levelPoints >= increaseDashSizeRequired)
         {
-            //player.GetComponent<PlayerController>().dashDistance += 20;
-            player.GetComponent<PlayerController>().dashSpeed += 20;
+            player.GetComponent<PlayerController>().dashSpeed += 1;
             levelPoints -= increaseDashSizeRequired;
 
         }
