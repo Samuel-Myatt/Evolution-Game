@@ -243,8 +243,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 400
   dmg: 50
+  pointsOnDeath: 0
   dead: 0
   thisObject: {fileID: 3334130985207250719}
+  hud: {fileID: 0}
 --- !u!114 &4286449456543380251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,11 +265,15 @@ MonoBehaviour:
   gameObject: {fileID: 3334130985207250719}
   chargedBullet: {fileID: 8978826770479696154, guid: 0fe57ab577e28fd4c84be498982acd97, type: 3}
   chargedBulletUnlocked: 0
+  chargeTime: 0
   chargeTimeNeeded: 1
   chargedBulletForce: 40
-  DOTBullet: {fileID: 0}
+  DOTBullet: {fileID: 8978826770479696154, guid: 39c9a64b53e186b42a3613a0449d12d4, type: 3}
   DOTBulletUnlocked: 0
   DOTBulletForce: 20
+  multiBulletUnlocked: 0
+  multiBulletAmount: 2
+  multiBulletSpread: 5
 --- !u!114 &654634325086141745
 MonoBehaviour:
   m_ObjectHideFlags: 0

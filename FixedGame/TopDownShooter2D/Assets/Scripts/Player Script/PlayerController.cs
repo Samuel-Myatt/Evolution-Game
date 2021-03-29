@@ -64,7 +64,8 @@ public class PlayerController : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);//Deactivate rather than destroy to avoid call errors.
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashUnlocked)
         {
@@ -158,8 +159,6 @@ public class PlayerController : MonoBehaviour
     }
     public void DeflectAbility()
     {
-
-
         if (countdown > 0)
         {
             reflector.SetActive(true);
@@ -168,7 +167,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             reflector.SetActive(false);
-
             reflectorActive = false;
         }
     }
