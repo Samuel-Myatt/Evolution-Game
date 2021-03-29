@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EggController : MonoBehaviour
 {
+    public GameObject canvas;
+
     public float health;
 
     public float maxHealth = 500f;
@@ -20,6 +22,7 @@ public class EggController : MonoBehaviour
     {
         if (health <= 0)
         {
+            canvas.GetComponent<LoseScript>().setDeathScreenActive();
             //Destroy(gameObject);
             gameObject.SetActive(false);//Deactivate rather than destroy to avoid call errors.
         }

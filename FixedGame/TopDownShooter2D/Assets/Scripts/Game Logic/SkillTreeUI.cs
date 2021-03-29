@@ -7,6 +7,7 @@ public class SkillTreeUI : MonoBehaviour
     public static bool paused = false;
     public GameObject skills;
     public GameObject player;
+    public GameObject egg;
     public int levelPoints;
     public GameObject hud;
     public GameObject buttonSpawns;
@@ -21,11 +22,13 @@ public class SkillTreeUI : MonoBehaviour
     public int unlockChargedShotRequired;
     public int unlockDOTRequired;
     public int unlockMultiShotRequired;
+    public int healEggRequired;
 
     public int increaseDashAmount;
     public int increaseHealthAmount;
     public int increaseSpeedAmount;
     public int healAmount;
+    public int healEggAmount;
 
 
 
@@ -38,17 +41,7 @@ public class SkillTreeUI : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (paused)
-            {
-                Resume();
-            }
-            else
-            {
-                SkillTreeActive();
-            }
-        }
+          
        
     }
     public void Resume()
@@ -163,6 +156,16 @@ public class SkillTreeUI : MonoBehaviour
             player.GetComponent<FireWeapon>().multiBulletUnlocked = true;
 
             levelPoints -= unlockMultiShotRequired;
+
+        }
+    }
+    public void HealEgg()
+    {
+        if (levelPoints >= healEggRequired)
+        {
+            egg.GetComponent<EggController>().health += healEggAmount;
+
+            levelPoints -= healEggRequired;
 
         }
     }

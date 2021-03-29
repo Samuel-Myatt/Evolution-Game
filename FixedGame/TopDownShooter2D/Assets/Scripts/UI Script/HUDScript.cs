@@ -62,22 +62,22 @@ public class HUDScript : MonoBehaviour
     {
         //Get PlayerHP
         PlayerHP = Player.GetComponent<PlayerController>().health;
-        PlayerHealth.text = PlayerHP.ToString();
+        PlayerHealth.text = ("Health  ") + PlayerHP.ToString();
 
 
         //Get EGGHP
         EggHP = Egg.GetComponent<EggController>().health;
-        EggHealth.text = EggHP.ToString();
+        EggHealth.text = ("HP  ") + EggHP.ToString();
 
         //Get Round no.
         //RoundNumb = RoundNum;
-        /*
-        RoundNumb = GameHandler.GetComponent<WaveSpawner>().roundNum;
-        */
-        RoundNumber.text = RoundNumb.ToString();
+        
+        RoundNumb = GameHandler.GetComponent<WaveSpawner>().round;
+        
+        RoundNumber.text = ("Round:  ") + RoundNumb.ToString();
 
 
-        levelPoints.text = skillTreeUI.GetComponent<SkillTreeUI>().levelPoints.ToString();
+        levelPoints.text = ("DNA Points:  ") + skillTreeUI.GetComponent<SkillTreeUI>().levelPoints.ToString();
 
 
     }
