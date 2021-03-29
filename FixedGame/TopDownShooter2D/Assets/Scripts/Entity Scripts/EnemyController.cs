@@ -70,6 +70,7 @@ public class EnemyController : MonoBehaviour
     {
         if (health <= 0 && thisObject.tag != "EnemyTank")
         {
+            
             hud.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             Destroy(gameObject);
 

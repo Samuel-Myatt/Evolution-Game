@@ -34,6 +34,8 @@ public class FireWeapon : MonoBehaviour
         if (Input.GetButton("Fire1"))//If Fire1 (mouse 1) is down...
         {
             chargeTime += Time.deltaTime;//Increase chargeTime.
+
+            SoundManager.PlaySound("PlayerShoot");
         }
 
         if (Input.GetButtonUp("Fire1") && gameObject.tag == "Player")//If Fire1 is released...

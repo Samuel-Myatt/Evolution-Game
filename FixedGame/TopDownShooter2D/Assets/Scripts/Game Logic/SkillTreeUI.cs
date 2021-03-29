@@ -22,6 +22,14 @@ public class SkillTreeUI : MonoBehaviour
     public int unlockChargedShotRequired;
     public int unlockDOTRequired;
 
+    public int increaseDashAmount;
+    public int increaseHealthAmount;
+    public int increaseSpeedAmount;
+    public int healAmount;
+
+
+
+
 
 
     private void Start()
@@ -73,7 +81,7 @@ public class SkillTreeUI : MonoBehaviour
 
         if (levelPoints >= increaseHealthRequired)
         {
-            player.GetComponent<PlayerController>().maxHealth += 50;
+            player.GetComponent<PlayerController>().maxHealth += increaseHealthAmount;
             
             levelPoints -= increaseHealthRequired;
 
@@ -84,7 +92,7 @@ public class SkillTreeUI : MonoBehaviour
 
         if (levelPoints >= increaseSpeedRequired)
         {
-            player.GetComponent<PlayerController>().speed += 2;
+            player.GetComponent<PlayerController>().speed += increaseSpeedAmount;
             
             levelPoints -= increaseSpeedRequired;
 
@@ -96,7 +104,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= increaseDashSizeRequired)
         {
             //player.GetComponent<PlayerController>().dashDistance += 20;
-            player.GetComponent<PlayerController>().dashSpeed += 20;
+            player.GetComponent<PlayerController>().dashSpeed += increaseDashAmount;
             
             levelPoints -= increaseDashSizeRequired;
 
@@ -107,7 +115,7 @@ public class SkillTreeUI : MonoBehaviour
 
         if (levelPoints >= healRequired)
         {
-            player.GetComponent<PlayerController>().health += 25;
+            player.GetComponent<PlayerController>().health += healAmount;
             
             levelPoints -= healRequired;
 
