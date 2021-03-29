@@ -28,8 +28,6 @@ public class PlayerController : MonoBehaviour
 
     public bool dashUnlocked = false;
 
-    public GameObject deathScreen;
-
     //New dash (not blink) variables. A large amount of the code realting to dashing was created with help from Bardent https://www.youtube.com/watch?v=ylsWcc4IP3E&ab_channel=Bardent
     private bool canMove = true;//Needed to prevent player movement while dashing.
     private bool canTurn = true;//Needed to prevent player turning while dashing.
@@ -67,7 +65,6 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             //Destroy(gameObject);
-            deathScreen.GetComponent<LoseScript>().setDeathScreenActive();
             gameObject.SetActive(false);//Deactivate rather than destroy to avoid call errors.
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashUnlocked)
