@@ -2250,59 +2250,77 @@ MonoBehaviour:
   - roundNum: 3
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
+    - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
     - {fileID: 3427957349203222333, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
-    count: 10
+    count: 8
     spawnRate: 1.5
   - roundNum: 4
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
     - {fileID: 3427957349203222333, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
-    count: 15
+    count: 10
     spawnRate: 1.5
   - roundNum: 5
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
-    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
     - {fileID: 3427957349203222333, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
-    count: 15
+    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
+    count: 10
     spawnRate: 1
   - roundNum: 6
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
-    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
-    - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
     - {fileID: 3427957349203222333, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
-    count: 17
+    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
+    count: 12
     spawnRate: 1
   - roundNum: 7
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
-    - {fileID: 2833574415950361929, guid: e3fd9f0fbe75f5542955539017758cc0, type: 3}
     - {fileID: 3427957349203222333, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
+    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
+    - {fileID: 2833574415950361929, guid: e3fd9f0fbe75f5542955539017758cc0, type: 3}
     count: 10
     spawnRate: 2
   - roundNum: 8
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
+    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
     - {fileID: 2833574415950361929, guid: e3fd9f0fbe75f5542955539017758cc0, type: 3}
-    - {fileID: 3427957349203222333, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
-    count: 15
+    count: 12
     spawnRate: 2
   - roundNum: 9
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
+    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
+    - {fileID: 7693236659984582396, guid: 34135567a036c184eb638e246a0bd95e, type: 3}
     - {fileID: 2833574415950361929, guid: e3fd9f0fbe75f5542955539017758cc0, type: 3}
-    - {fileID: 3427957349203222333, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
-    count: 20
+    count: 12
     spawnRate: 1
   - roundNum: 10
     enemy:
     - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
+    - {fileID: 7693236659984582396, guid: 34135567a036c184eb638e246a0bd95e, type: 3}
     - {fileID: 2833574415950361929, guid: e3fd9f0fbe75f5542955539017758cc0, type: 3}
-    - {fileID: 3459726103536695389, guid: 614e7a07e6106f544908828c14a22930, type: 3}
     - {fileID: 3631603328486191763, guid: 77bf18e473d7c1d41ab3bf085afc2825, type: 3}
-    count: 15
+    count: 8
+    spawnRate: 1
+  - roundNum: 11
+    enemy:
+    - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
+    - {fileID: 7693236659984582396, guid: 34135567a036c184eb638e246a0bd95e, type: 3}
+    - {fileID: 3631603328486191763, guid: 77bf18e473d7c1d41ab3bf085afc2825, type: 3}
+    - {fileID: 15954074975707641, guid: 3b20baf9789b5e048b57f40fe001865e, type: 3}
+    count: 10
+    spawnRate: 1
+  - roundNum: 12
+    enemy:
+    - {fileID: 6829916206097715849, guid: 0b3224e395291034aa9c50d4e739fa57, type: 3}
+    - {fileID: 7693236659984582396, guid: 34135567a036c184eb638e246a0bd95e, type: 3}
+    - {fileID: 15954074975707641, guid: 3b20baf9789b5e048b57f40fe001865e, type: 3}
+    - {fileID: 15954074975707641, guid: 3b20baf9789b5e048b57f40fe001865e, type: 3}
+    count: 12
     spawnRate: 1
   spawnPoints:
   - {fileID: 2006505829}
