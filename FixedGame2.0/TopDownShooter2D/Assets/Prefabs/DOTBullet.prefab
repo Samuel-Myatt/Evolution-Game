@@ -5156,5 +5156,5 @@ MonoBehaviour:
   DOT: 30
   numberOfDOT: 3
   DOTDelay: 1
-  bullet: {fileID: 0}
+  bullet: {fileID: 8978826770479696154}
   lifeDuration: 2
