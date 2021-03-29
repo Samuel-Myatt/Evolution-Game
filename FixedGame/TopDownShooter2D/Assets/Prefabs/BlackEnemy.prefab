@@ -281,6 +281,7 @@ MonoBehaviour:
   stopDis: 8
   retreatDis: 4
   maxTimeBetweenShots: 4
+  player: {fileID: 0}
 --- !u!114 &8566093264695446386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,12 +315,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponFirePoint: {fileID: 6426420290510433338}
   bullet: {fileID: 8978826770479696154, guid: 6369e4ffd655383489f39276a0173a62, type: 3}
+  bulletForce: 7
   gameObject: {fileID: 8566093264695446384}
   chargedBullet: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
   chargedBulletUnlocked: 0
+  chargeTime: 0
   chargeTimeNeeded: 1
+  chargedBulletForce: 40
   DOTBullet: {fileID: 8978826770479696154, guid: 39c9a64b53e186b42a3613a0449d12d4, type: 3}
   DOTBulletUnlocked: 0
+  DOTBulletForce: 20
   multiBulletUnlocked: 0
   multiBulletAmount: 2
   multiBulletSpread: 5

@@ -228,6 +228,7 @@ MonoBehaviour:
   stopDis: 3
   retreatDis: 3
   maxTimeBetweenShots: 1
+  player: {fileID: 0}
 --- !u!114 &4283448125583407303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +244,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 300
   dmg: 25
+  pointsOnDeath: 0
   dead: 0
   thisObject: {fileID: 4283448125583407301}
+  hud: {fileID: 0}
 --- !u!114 &3335034299647767745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,11 +266,15 @@ MonoBehaviour:
   gameObject: {fileID: 4283448125583407301}
   chargedBullet: {fileID: 8978826770479696154, guid: 0fe57ab577e28fd4c84be498982acd97, type: 3}
   chargedBulletUnlocked: 0
+  chargeTime: 0
   chargeTimeNeeded: 1
   chargedBulletForce: 40
-  DOTBullet: {fileID: 0}
+  DOTBullet: {fileID: 8978826770479696154, guid: 39c9a64b53e186b42a3613a0449d12d4, type: 3}
   DOTBulletUnlocked: 0
   DOTBulletForce: 20
+  multiBulletUnlocked: 0
+  multiBulletAmount: 2
+  multiBulletSpread: 5
 --- !u!114 &2026990797908998891
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -224,6 +224,7 @@ MonoBehaviour:
   stopDis: 3
   retreatDis: 2
   maxTimeBetweenShots: 2
+  player: {fileID: 0}
 --- !u!114 &3179637014653728211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponFirePoint: {fileID: 283599510186955419}
   bullet: {fileID: 8978826770479696154, guid: 6369e4ffd655383489f39276a0173a62, type: 3}
-  bulletForce: 20
+  bulletForce: 6
   gameObject: {fileID: 3179637014653728209}
   chargedBullet: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
   chargedBulletUnlocked: 0
