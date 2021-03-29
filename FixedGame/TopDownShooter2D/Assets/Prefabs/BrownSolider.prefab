@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9a22a57bc0b8f459fda5864ad1c3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 3
   stopDis: 5
   retreatDis: 3
-  maxTimeBetweenShots: 0.5
+  maxTimeBetweenShots: 1
 --- !u!114 &3724952461486559923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   chargeTime: 0
   chargeTimeNeeded: 1
   chargedBulletForce: 40
-  DOTBullet: {fileID: 0}
+  DOTBullet: {fileID: 8978826770479696154, guid: 39c9a64b53e186b42a3613a0449d12d4, type: 3}
   DOTBulletUnlocked: 0
   DOTBulletForce: 20
   multiBulletUnlocked: 0

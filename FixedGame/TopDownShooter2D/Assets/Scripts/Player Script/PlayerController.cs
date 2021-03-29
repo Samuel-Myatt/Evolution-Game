@@ -64,7 +64,8 @@ public class PlayerController : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);//Deactivate rather than destroy to avoid call errors.
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashUnlocked)
         {

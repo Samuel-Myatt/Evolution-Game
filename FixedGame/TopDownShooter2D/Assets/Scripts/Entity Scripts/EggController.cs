@@ -21,7 +21,7 @@ public class EggController : MonoBehaviour
         if (health <= 0)
         {
             //Destroy(gameObject);
-            gameObject.SetActive(false);//Deactivate rather than destroy to avoid errors.
+            gameObject.SetActive(false);//Deactivate rather than destroy to avoid call errors.
         }
     }
 }

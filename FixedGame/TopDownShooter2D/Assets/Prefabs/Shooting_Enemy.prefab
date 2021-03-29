@@ -242,7 +242,7 @@ MonoBehaviour:
   pointsOnDeath: 0
   dead: 0
   thisObject: {fileID: 3179637014653728209}
-  skillTreeUI: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!114 &-6080381920934544894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,11 +261,15 @@ MonoBehaviour:
   gameObject: {fileID: 3179637014653728209}
   chargedBullet: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
   chargedBulletUnlocked: 0
+  chargeTime: 0
   chargeTimeNeeded: 1
   chargedBulletForce: 40
-  DOTBullet: {fileID: 0}
+  DOTBullet: {fileID: 8978826770479696154, guid: 39c9a64b53e186b42a3613a0449d12d4, type: 3}
   DOTBulletUnlocked: 0
   DOTBulletForce: 20
+  multiBulletUnlocked: 0
+  multiBulletAmount: 2
+  multiBulletSpread: 5
 --- !u!1 &4755296650020534755
 GameObject:
   m_ObjectHideFlags: 0
