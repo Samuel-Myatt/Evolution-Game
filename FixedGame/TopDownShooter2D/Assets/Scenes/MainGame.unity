@@ -8049,10 +8049,10 @@ MonoBehaviour:
   unlockReflectorRequired: 10
   unlockChargedShotRequired: 10
   unlockDOTRequired: 10
-  increaseDashAmount: 0
-  increaseHealthAmount: 0
-  increaseSpeedAmount: 0
-  healAmount: 0
+  increaseDashAmount: 1
+  increaseHealthAmount: 25
+  increaseSpeedAmount: 1
+  healAmount: 50
 --- !u!114 &1944228229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8846,6 +8846,10 @@ PrefabInstance:
     - target: {fileID: 3250187098657991577, guid: d0cae3b2d163434489b755c3bf4c5f85, type: 3}
       propertyPath: m_Name
       value: Egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250187098657991579, guid: d0cae3b2d163434489b755c3bf4c5f85, type: 3}
+      propertyPath: maxHealth
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0cae3b2d163434489b755c3bf4c5f85, type: 3}
