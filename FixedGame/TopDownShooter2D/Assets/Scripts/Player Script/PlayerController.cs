@@ -159,8 +159,6 @@ public class PlayerController : MonoBehaviour
     }
     public void DeflectAbility()
     {
-
-
         if (countdown > 0)
         {
             reflector.SetActive(true);
@@ -169,7 +167,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             reflector.SetActive(false);
-
             reflectorActive = false;
         }
     }
