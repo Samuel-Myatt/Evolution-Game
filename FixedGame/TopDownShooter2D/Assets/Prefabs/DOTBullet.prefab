@@ -5153,7 +5153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 25
-  DOT: 25
+  DOT: 75
   numberOfDOT: 3
   DOTDelay: 1
   bullet: {fileID: 0}

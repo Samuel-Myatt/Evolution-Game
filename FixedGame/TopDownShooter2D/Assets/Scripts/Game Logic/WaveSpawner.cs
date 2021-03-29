@@ -10,7 +10,6 @@ public class WaveSpawner : MonoBehaviour
 
     // makes it so the wave class is able to be accessed inside the editor
     [System.Serializable]
-
     public class Wave
     {
         public int roundNum;
