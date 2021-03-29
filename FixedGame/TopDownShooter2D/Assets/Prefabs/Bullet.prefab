@@ -347,6 +347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40409119054333649bb4cf536e363a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 50
+  dmg: 25
   bullet: {fileID: 8978826770479696154}
   lifeDuration: 2
