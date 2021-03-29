@@ -21,6 +21,7 @@ public class SkillTreeUI : MonoBehaviour
     public int unlockReflectorRequired;
     public int unlockChargedShotRequired;
     public int unlockDOTRequired;
+    public int unlockMultiShotRequired;
 
     public int increaseDashAmount;
     public int increaseHealthAmount;
@@ -152,6 +153,17 @@ public class SkillTreeUI : MonoBehaviour
             
             levelPoints -= unlockDOTRequired;
             Debug.Log("TheClick");
+        }
+    }
+    public void UnlockMultiShot()
+    {
+
+        if (levelPoints >= unlockMultiShotRequired)
+        {
+            player.GetComponent<FireWeapon>().multiBulletUnlocked = true;
+
+            levelPoints -= unlockMultiShotRequired;
+
         }
     }
 

@@ -63,7 +63,7 @@ public class EnemyController : MonoBehaviour
     {
         if (health <= 0 && thisObject.tag != "EnemyTank")
         {
-            
+            SoundManager.PlaySound("DeathSound");
             hud.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             Destroy(gameObject);
 

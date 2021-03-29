@@ -35,7 +35,7 @@ public class FireWeapon : MonoBehaviour
         {
             chargeTime += Time.deltaTime;//Increase chargeTime.
 
-            SoundManager.PlaySound("PlayerShoot");
+            
         }
 
         if (Input.GetButtonUp("Fire1") && gameObject.tag == "Player")//If Fire1 is released...
@@ -65,6 +65,7 @@ public class FireWeapon : MonoBehaviour
     }
     void Fire(GameObject bulletObject, float force)
     {
+        SoundManager.PlaySound("PlayerShoot");
         GameObject newBullet = Instantiate(bulletObject, weaponFirePoint.position, weaponFirePoint.rotation);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(weaponFirePoint.up * force, ForceMode2D.Impulse);
