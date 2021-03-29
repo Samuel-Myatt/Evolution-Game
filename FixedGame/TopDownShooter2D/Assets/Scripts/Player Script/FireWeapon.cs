@@ -8,7 +8,7 @@ public class FireWeapon : MonoBehaviour
 
     //Normal bullet.
     public GameObject bullet;
-    public float bulletForce = 20f;
+    private float bulletForce = 20f;
 
     public GameObject gameObject;
 
@@ -16,18 +16,18 @@ public class FireWeapon : MonoBehaviour
     public GameObject chargedBullet;
     public bool chargedBulletUnlocked = false;
     private float chargeTime = 0f;
-    public float chargeTimeNeeded = 1f;
-    public float chargedBulletForce = 40f;
+    public float chargeTimeNeeded = 0.5f;
+    private float chargedBulletForce = 40f;
 
     //DoT bullet.
     public GameObject DOTBullet;
     public bool DOTBulletUnlocked = false;
-    public float DOTBulletForce = 20f;
+    private float DOTBulletForce = 20f;
 
     //Multi bullets.
     public bool multiBulletUnlocked = false;
-    public int multiBulletAmount;
-    public float multiBulletSpread;
+    public int multiBulletAmount = 2;
+    public float multiBulletSpread = 5f;
 
     void Update()
     {
@@ -40,11 +40,15 @@ public class FireWeapon : MonoBehaviour
         {
             if (chargeTime < chargeTimeNeeded || chargedBulletUnlocked == false)//If charged for less than 1 second OR charged bullets have not been unlocked yet...
             {
-                Fire(bullet, bulletForce);//Normal bullet.
+                //Normal bullet.
+                if (multiBulletUnlocked) FireMulti(bullet, bulletForce, multiBulletAmount, multiBulletSpread);
+                else Fire(bullet, bulletForce);
             }
             else//If charged and unlocked...
             {
-                Fire(chargedBullet, chargedBulletForce);//Charged bullet.
+                //Charged bullet.
+                if (multiBulletUnlocked) FireMulti(chargedBullet, chargedBulletForce, multiBulletAmount, multiBulletSpread);
+                else Fire(chargedBullet, chargedBulletForce);
             }
 
             chargeTime = 0f;//Reset chargeTime.
@@ -52,12 +56,9 @@ public class FireWeapon : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2") && DOTBulletUnlocked)//If Fire2 (mouse 2) is pressed...
         {
-            Fire(DOTBullet, DOTBulletForce);//DoT bullet.
-        }
-
-        if (Input.GetButtonDown("Fire3") && multiBulletUnlocked)//If Fire3 (middle mouse) is pressed...
-        {
-            FireMulti(bullet, bulletForce, multiBulletAmount, multiBulletSpread);//Multi bullets.
+            //DoT bullet.
+            if (multiBulletUnlocked) FireMulti(DOTBullet, DOTBulletForce, multiBulletAmount, multiBulletSpread);
+            else Fire(DOTBullet, DOTBulletForce);
         }
     }
     void Fire(GameObject bulletObject, float force)

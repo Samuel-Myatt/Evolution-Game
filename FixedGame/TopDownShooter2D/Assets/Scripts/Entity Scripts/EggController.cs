@@ -6,11 +6,10 @@ public class EggController : MonoBehaviour
 {
     public float health;
 
-    public float maxHealth = 100f;
+    public float maxHealth = 500f;
 
     private void Start()
     {
-        
         health = maxHealth;
     }
     public void TakeDamage(float damage)
@@ -21,7 +20,8 @@ public class EggController : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);//Deactivate rather than destroy to avoid errors.
         }
     }
 }
