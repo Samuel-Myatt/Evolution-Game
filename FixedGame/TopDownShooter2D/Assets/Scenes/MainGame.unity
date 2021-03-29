@@ -9752,12 +9752,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
     - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: chargeTimeNeeded
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: DOTBulletUnlocked
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: multiBulletAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: multiBulletSpread
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: multiBulletUnlocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: chargedBulletUnlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074967, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9789,7 +9805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: dashUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: reflectorActive

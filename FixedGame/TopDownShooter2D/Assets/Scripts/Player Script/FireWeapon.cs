@@ -8,7 +8,7 @@ public class FireWeapon : MonoBehaviour
 
     //Normal bullet.
     public GameObject bullet;
-    public float bulletForce = 20f;
+    private float bulletForce = 20f;
 
     public GameObject gameObject;
 
@@ -16,13 +16,18 @@ public class FireWeapon : MonoBehaviour
     public GameObject chargedBullet;
     public bool chargedBulletUnlocked = false;
     private float chargeTime = 0f;
-    public float chargeTimeNeeded = 1f;
-    public float chargedBulletForce = 40f;
+    public float chargeTimeNeeded = 0.5f;
+    private float chargedBulletForce = 40f;
 
     //DoT bullet.
     public GameObject DOTBullet;
     public bool DOTBulletUnlocked = false;
-    public float DOTBulletForce = 20f;
+    private float DOTBulletForce = 20f;
+
+    //Multi bullets.
+    public bool multiBulletUnlocked = false;
+    public int multiBulletAmount = 2;
+    public float multiBulletSpread = 5f;
 
     void Update()
     {
@@ -35,11 +40,15 @@ public class FireWeapon : MonoBehaviour
         {
             if (chargeTime < chargeTimeNeeded || chargedBulletUnlocked == false)//If charged for less than 1 second OR charged bullets have not been unlocked yet...
             {
-                Fire(bullet, bulletForce);//Normal bullet.
+                //Normal bullet.
+                if (multiBulletUnlocked) FireMulti(bullet, bulletForce, multiBulletAmount, multiBulletSpread);
+                else Fire(bullet, bulletForce);
             }
             else//If charged and unlocked...
             {
-                Fire(chargedBullet, chargedBulletForce);//Charged bullet.
+                //Charged bullet.
+                if (multiBulletUnlocked) FireMulti(chargedBullet, chargedBulletForce, multiBulletAmount, multiBulletSpread);
+                else Fire(chargedBullet, chargedBulletForce);
             }
 
             chargeTime = 0f;//Reset chargeTime.
@@ -47,15 +56,39 @@ public class FireWeapon : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2") && DOTBulletUnlocked)//If Fire2 (mouse 2) is pressed...
         {
-            Debug.Log("RightClick");
-            Fire(DOTBullet, DOTBulletForce);//DoT bullet.
+            //DoT bullet.
+            if (multiBulletUnlocked) FireMulti(DOTBullet, DOTBulletForce, multiBulletAmount, multiBulletSpread);
+            else Fire(DOTBullet, DOTBulletForce);
         }
     }
-    void Fire(GameObject bulletType, float forceType)
+    void Fire(GameObject bulletObject, float force)
     {
-        GameObject newBullet = Instantiate(bulletType, weaponFirePoint.position, weaponFirePoint.rotation);
+        GameObject newBullet = Instantiate(bulletObject, weaponFirePoint.position, weaponFirePoint.rotation);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(weaponFirePoint.up * forceType, ForceMode2D.Impulse);
+        rb.AddForce(weaponFirePoint.up * force, ForceMode2D.Impulse);
+    }
+    void FireMulti(GameObject bulletObject, float force, int amount, float spreadWhole)
+    {
+        if(amount != 1)//Prevent dividing by zero.
+        {
+            float spreadBtwnBullets = spreadWhole / (amount - 1);
+            float startAngle = 90f + weaponFirePoint.rotation.eulerAngles.z + spreadWhole * -0.5f;
+            float angle;
+
+            for (int i = 0; i < amount; i++)
+            {
+                angle = startAngle + spreadBtwnBullets * i;
+
+                GameObject newBullet = Instantiate(bulletObject, weaponFirePoint.position, weaponFirePoint.rotation);
+                Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
+                Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(dir * force, ForceMode2D.Impulse);
+            }
+        }
+        else
+        {
+            Debug.Log("Cannot devide by zero! Single bullet not accepted.");
+        }
     }
     public void FireEnemy()
     {
