@@ -10,6 +10,7 @@ public class SkillTreeUI : MonoBehaviour
     public int levelPoints;
     public GameObject[] buttons;
     public GameObject hud;
+    public GameObject buttonSpawns;
 
 
     public int unlockDashRequired;
@@ -47,6 +48,7 @@ public class SkillTreeUI : MonoBehaviour
         skills.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
+        buttonSpawns.GetComponent<SpawnButton>().DestroyButtons();
     }
     public void SkillTreeActive()
     {

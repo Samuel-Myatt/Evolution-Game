@@ -26,6 +26,7 @@ public class WaveSpawner : MonoBehaviour
     public int musicRound;
 
     public GameObject skillTreeUI;
+    public GameObject spawnButton;
 
     public float waveDelay = 5f;
     public float countDown;
@@ -82,6 +83,7 @@ public class WaveSpawner : MonoBehaviour
 
         
         OpenSkillMenu();
+        SortButton();
         musicRound++;
         state = SpawnState.counting;// sets the state to counting before the next round starts
 
@@ -159,8 +161,17 @@ public class WaveSpawner : MonoBehaviour
     }
     void OpenSkillMenu()
     {
+        
         skillTreeUI.GetComponent<SkillTreeUI>().SkillTreeActive();
+    }
 
+    void SortButton()
+    {
+        spawnButton.GetComponent<SpawnButton>().SortButtons();
+    }
+    void DeleteButtons()
+    {
+        spawnButton.GetComponent<SpawnButton>().DestroyButtons();
     }
     
 

@@ -10,6 +10,13 @@ public class SpawnButton : MonoBehaviour
     public Transform spawnPoint2;
     public Transform spawnPoint3;
 
+    [SerializeField]
+    GameObject clone0;
+    [SerializeField]
+    GameObject clone1;
+    [SerializeField]
+    GameObject clone2;
+
     public void ThreeRandomFromArray<T>(T[] array, out T out0, out T out1, out T out2 )
     {
         if(array.Length < 3)
@@ -43,8 +50,9 @@ public class SpawnButton : MonoBehaviour
     {
         return list[Random.Range(0, list.Length)];
     }
+    
 
-    private void Start()
+    public void SortButtons()
     {
         GameObject object0;
         GameObject object1;
@@ -54,8 +62,16 @@ public class SpawnButton : MonoBehaviour
         ThreeRandomFromArray(buttons, out object0, out object1, out object2);
 
         //Create object0, object1, object2 at thei corresponding spawn position
-        Instantiate(object0, spawnPoint1.transform);
-        Instantiate(object1, spawnPoint2.transform);
-        Instantiate(object2, spawnPoint3.transform);
+         clone0 = Instantiate(object0, spawnPoint1.transform);
+         clone1 = Instantiate(object1, spawnPoint2.transform);
+         clone2 = Instantiate(object2, spawnPoint3.transform);
+
+        
+    }
+    public void DestroyButtons()
+    {
+        Destroy(clone0);
+        Destroy(clone1);
+        Destroy(clone2);
     }
 }
