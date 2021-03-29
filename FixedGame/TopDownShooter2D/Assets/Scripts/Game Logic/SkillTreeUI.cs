@@ -10,6 +10,7 @@ public class SkillTreeUI : MonoBehaviour
     public int levelPoints;
     public GameObject[] buttons;
 
+
     public int unlockDashRequired;
     public int increaseHealthRequired;
     public int increaseSpeedRequired;
@@ -87,7 +88,8 @@ public class SkillTreeUI : MonoBehaviour
 
         if (levelPoints >= increaseDashSizeRequired)
         {
-            player.GetComponent<PlayerController>().dashSpeed += 1;
+            //player.GetComponent<PlayerController>().dashDistance += 20;
+            player.GetComponent<PlayerController>().dashSpeed += 20;
             levelPoints -= increaseDashSizeRequired;
 
         }

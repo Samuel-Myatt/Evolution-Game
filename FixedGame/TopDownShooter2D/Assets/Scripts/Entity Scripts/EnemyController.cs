@@ -17,7 +17,8 @@ public class EnemyController : MonoBehaviour
 
     public bool dead = false;
     public GameObject thisObject;
-    public GameObject skillTreeUI;
+    [SerializeField]
+    GameObject hud;
 
 
 
@@ -28,7 +29,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        skillTreeUI = GameObject.Find("SkillTree_UI");
+        hud = GameObject.Find("Canvas");
         health = maxHealth;
     }
     float calculateHealth()
@@ -40,10 +41,10 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-       
+
         thisObject.GetComponent<Renderer>().material.color = Color.red;
         Flash = 0;
-        
+
 
 
     }
@@ -69,18 +70,18 @@ public class EnemyController : MonoBehaviour
     {
         if (health <= 0 && thisObject.tag != "EnemyTank")
         {
-            //skillTreeUI.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
+            hud.GetComponent<HUDScript>().points += pointsOnDeath;
             Destroy(gameObject);
 
         }
         if (health <= 0 && thisObject.tag == "EnemyTank")
         {
-            //skillTreeUI.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
+            hud.GetComponent<HUDScript>().points += pointsOnDeath;
             dead = true;
         }
 
-        if(Flash > 25)
-		{
+        if (Flash > 25)
+        {
             thisObject.GetComponent<Renderer>().material.color = Color.white;
         }
         Flash++;
