@@ -8,7 +8,6 @@ public class SkillTreeUI : MonoBehaviour
     public GameObject skills;
     public GameObject player;
     public int levelPoints;
-    public GameObject[] buttons;
     public GameObject hud;
     public GameObject buttonSpawns;
 
@@ -69,11 +68,12 @@ public class SkillTreeUI : MonoBehaviour
     public void UnlockDash()
     {
         Debug.Log("Clicked");
-        if (levelPoints >= unlockDashRequired)
+        if (levelPoints >= unlockDashRequired&& player.GetComponent<PlayerController>().dashUnlocked == false)
         {
             player.GetComponent<PlayerController>().dashUnlocked = true;
             
             levelPoints -= unlockDashRequired;
+            
             Debug.Log("TheClick");
         }
     }
@@ -125,7 +125,7 @@ public class SkillTreeUI : MonoBehaviour
     public void UnlockReflector()
     {
         Debug.Log("Clicked");
-        if (levelPoints >= unlockReflectorRequired)
+        if (levelPoints >= unlockReflectorRequired && player.GetComponent<PlayerController>().reflectorUnlocked == false)
         {
             player.GetComponent<PlayerController>().reflectorUnlocked = true;
            
@@ -136,7 +136,7 @@ public class SkillTreeUI : MonoBehaviour
     public void UnlockChargedShot()
     {
         Debug.Log("Clicked");
-        if (levelPoints >= unlockChargedShotRequired)
+        if (levelPoints >= unlockChargedShotRequired && player.GetComponent<FireWeapon>().chargedBulletUnlocked == false)
         {
             player.GetComponent<FireWeapon>().chargedBulletUnlocked = true;
            
@@ -147,7 +147,7 @@ public class SkillTreeUI : MonoBehaviour
     public void UnlockDOTShot()
     {
         Debug.Log("Clicked");
-        if (levelPoints >= unlockDOTRequired)
+        if (levelPoints >= unlockDOTRequired && player.GetComponent<FireWeapon>().DOTBulletUnlocked == false)
         {
             player.GetComponent<FireWeapon>().DOTBulletUnlocked = true;
             
@@ -158,7 +158,7 @@ public class SkillTreeUI : MonoBehaviour
     public void UnlockMultiShot()
     {
 
-        if (levelPoints >= unlockMultiShotRequired)
+        if (levelPoints >= unlockMultiShotRequired && player.GetComponent<FireWeapon>().multiBulletUnlocked == false)
         {
             player.GetComponent<FireWeapon>().multiBulletUnlocked = true;
 
