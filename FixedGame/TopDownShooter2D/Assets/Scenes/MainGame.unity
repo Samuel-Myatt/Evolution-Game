@@ -9213,6 +9213,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: multiBulletAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: multiBulletSpread
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
+      propertyPath: multiBulletUnlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425183187668074965, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: chargedBulletUnlocked
       value: 0
       objectReference: {fileID: 0}
@@ -9246,7 +9258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: dashUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425183187668074969, guid: d705b71a175b7cc4bab997ebea233115, type: 3}
       propertyPath: reflectorActive
