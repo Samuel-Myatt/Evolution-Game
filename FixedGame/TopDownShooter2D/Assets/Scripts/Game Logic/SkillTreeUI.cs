@@ -10,6 +10,17 @@ public class SkillTreeUI : MonoBehaviour
     public int levelPoints;
     public GameObject[] buttons;
 
+    public int unlockDashRequired;
+    public int increaseHealthRequired;
+    public int increaseSpeedRequired;
+    public int increaseDashSizeRequired;
+    public int healRequired;
+    public int unlockReflectorRequired;
+    public int unlockChargedShotRequired;
+    public int unlockDOTRequired;
+
+
+
     private void Start()
     {
         player.GetComponent<PlayerController>();
@@ -44,71 +55,81 @@ public class SkillTreeUI : MonoBehaviour
     public void UnlockDash()
     {
         Debug.Log("Clicked");
-        if (levelPoints >= 1)
+        if (levelPoints >= unlockDashRequired)
         {
             player.GetComponent<PlayerController>().dashUnlocked = true;
-            levelPoints -= 1;
+            levelPoints -= unlockDashRequired;
             Debug.Log("TheClick");
         }
     }
     public void IncreaseHealth()
     {
 
-        if (levelPoints >= 1)
+        if (levelPoints >= increaseHealthRequired)
         {
             player.GetComponent<PlayerController>().maxHealth += 50;
-            levelPoints -= 1;
+            levelPoints -= increaseHealthRequired;
 
         }
     }
     public void IncreaseSpeed()
     {
 
-        if (levelPoints >= 1)
+        if (levelPoints >= increaseSpeedRequired)
         {
             player.GetComponent<PlayerController>().speed += 2;
-            levelPoints -= 1;
+            levelPoints -= increaseSpeedRequired;
 
         }
     }
     public void IncreaseDashSize()
     {
 
-        if (levelPoints >= 1)
+        if (levelPoints >= increaseDashSizeRequired)
         {
             //player.GetComponent<PlayerController>().dashDistance += 20;
             player.GetComponent<PlayerController>().dashSpeed += 20;
-            levelPoints -= 1;
+            levelPoints -= increaseDashSizeRequired;
 
         }
     }
     public void Heal()
     {
 
-        if (levelPoints >= 1)
+        if (levelPoints >= healRequired)
         {
             player.GetComponent<PlayerController>().health += 25;
-            levelPoints -= 1;
+            levelPoints -= healRequired;
 
         }
     }
     public void UnlockReflector()
     {
         Debug.Log("Clicked");
-        if (levelPoints >= 1)
+        if (levelPoints >= unlockReflectorRequired)
         {
             player.GetComponent<PlayerController>().reflectorUnlocked = true;
-            levelPoints -= 1;
+            levelPoints -= unlockReflectorRequired;
             Debug.Log("TheClick");
         }
     }
     public void UnlockChargedShot()
     {
         Debug.Log("Clicked");
-        if (levelPoints >= 1)
+        if (levelPoints >= unlockChargedShotRequired)
         {
             player.GetComponent<FireWeapon>().chargedBulletUnlocked = true;
-            levelPoints -= 1;
+            levelPoints -= unlockChargedShotRequired;
+            Debug.Log("TheClick");
+        }
+    }
+    public void UnlockDOTShot()
+    {
+        Debug.Log("Clicked");
+        if (levelPoints >= unlockDOTRequired)
+        {
+            player.GetComponent<FireWeapon>().DOTBulletUnlocked = true;
+            levelPoints -= unlockDOTRequired;
             Debug.Log("TheClick");
         }
     }

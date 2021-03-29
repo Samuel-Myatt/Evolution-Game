@@ -80,7 +80,7 @@ public class WaveSpawner : MonoBehaviour
     void StartNewRound()
     {
 
-        IncreaseLevel();
+        
         OpenSkillMenu();
         musicRound++;
         state = SpawnState.counting;// sets the state to counting before the next round starts
@@ -162,10 +162,6 @@ public class WaveSpawner : MonoBehaviour
         skillTreeUI.GetComponent<SkillTreeUI>().SkillTreeActive();
 
     }
-    void IncreaseLevel()
-    {
-        skillTreeUI.GetComponent<SkillTreeUI>().levelPoints += 1;
-
-    }
+    
 
 }

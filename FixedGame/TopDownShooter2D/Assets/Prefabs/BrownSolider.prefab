@@ -163,7 +163,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3724952461486559921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -239,8 +239,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 50
   dmg: 10
+  pointsOnDeath: 0
   dead: 0
   thisObject: {fileID: 3724952461486559921}
+  skillTreeUI: {fileID: 0}
 --- !u!114 &3751431798068665698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponFirePoint: {fileID: 2053196969587439099}
-  bullet: {fileID: 8978826770479696154, guid: 1ecedec584d7b984894667ca6a10f4fa, type: 3}
+  bullet: {fileID: 8978826770479696154, guid: 6369e4ffd655383489f39276a0173a62, type: 3}
   bulletForce: 20
   gameObject: {fileID: 3724952461486559921}
   chargedBullet: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}

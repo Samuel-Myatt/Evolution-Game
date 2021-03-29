@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool paused = false;
     public GameObject menu;
+    public GameObject Hud;
 
     // Update is called once per frame
     void Update()
@@ -26,14 +27,14 @@ public class PauseMenu : MonoBehaviour
     }
    public void Resume()
     {
-        HUDScript.EnableHUD();
+        Hud.SetActive(true);
         menu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
     }
     public void Pause()
     {
-        HUDScript.DisableHUD();
+        Hud.SetActive(false);
         menu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;

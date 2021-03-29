@@ -164,8 +164,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   dmg: 25
+  pointsOnDeath: 10
   dead: 0
   thisObject: {fileID: 4822089737761087237}
+  skillTreeUI: {fileID: 0}
 --- !u!61 &6940593414803107132
 BoxCollider2D:
   m_ObjectHideFlags: 0

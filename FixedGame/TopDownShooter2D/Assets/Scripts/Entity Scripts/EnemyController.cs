@@ -10,11 +10,15 @@ public class EnemyController : MonoBehaviour
 
     public float dmg = 25f;
 
+    public int pointsOnDeath;
+
 
 
 
     public bool dead = false;
+
     public GameObject thisObject;
+    public GameObject skillTreeUI;
 
 
 
@@ -25,7 +29,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-
+        skillTreeUI = GameObject.Find("SkillTree_UI");
         health = maxHealth;
     }
     float calculateHealth()
@@ -61,12 +65,13 @@ public class EnemyController : MonoBehaviour
     {
         if (health <= 0 && thisObject.tag != "EnemyTank")
         {
-
+            //skillTreeUI.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             Destroy(gameObject);
 
         }
         if (health <= 0 && thisObject.tag == "EnemyTank")
         {
+            //skillTreeUI.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             dead = true;
         }
 

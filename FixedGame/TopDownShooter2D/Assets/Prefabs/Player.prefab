@@ -229,19 +229,19 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   speed: 2
-  dashDistance: 0
   countdown: 5
   startCountdownTime: 5
   bufferTimer: 0
   startBufferTimer: 0
   skillPoints: 0
   dashUnlocked: 0
+  dashTime: 0
+  dashSpeed: 0
+  distanceBetweenImages: 0
+  dashCoolDown: 0
   reflectorActive: 0
   reflectorUnlocked: 0
   reflector: {fileID: 0}
-  dashLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &7425183187668074965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,14 +275,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.9602293}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 8, y: 8}
     newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

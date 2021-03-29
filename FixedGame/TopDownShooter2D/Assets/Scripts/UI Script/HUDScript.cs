@@ -12,6 +12,9 @@ public class HUDScript : MonoBehaviour
 
     GameObject GameHandler;
 
+    public GameObject Hud;
+    public GameObject skillTreeUI;
+
     //Grab player GameObject and Script
     public Text PlayerHealth;
     float PlayerHP;
@@ -20,10 +23,11 @@ public class HUDScript : MonoBehaviour
     public Text EggHealth;
     float EggHP;
 
+    public Text levelPoints;
+    int points;
+
     //Grab round GameObject and Script
-    public Text RoundTime;
-    float CurrTime;
-    //From countdown script
+  
 
 
     public Text RoundNumber;
@@ -43,7 +47,7 @@ public class HUDScript : MonoBehaviour
         GameHandler = GameObject.Find("GameManager");
 
         //Enables HUD on start incase diabled
-        EnableHUD();
+        
     }
 
     // Update is called once per frame
@@ -52,21 +56,13 @@ public class HUDScript : MonoBehaviour
         FetchValues();
     }
 
-    public static void EnableHUD()
-    {
-        GameObject.Find("HUD").SetActive(true);
-    }
-
-    public static void DisableHUD()
-    {
-        GameObject.Find("HUD").SetActive(false);
-    }
-
+   
     void FetchValues()
     {
         //Get PlayerHP
         PlayerHP = Player.GetComponent<PlayerController>().health;
         PlayerHealth.text = PlayerHP.ToString();
+        
 
         //Get EGGHP
         EggHP = Egg.GetComponent<EggController>().health;
@@ -79,9 +75,10 @@ public class HUDScript : MonoBehaviour
         */
         RoundNumber.text = RoundNumb.ToString();
 
-        //Get Timer
-        CurrTime = GetComponent<CountDown>().currentTime;
-        RoundTime.text = CurrTime.ToString();
+        points = skillTreeUI.GetComponent<SkillTreeUI>().levelPoints;
+        levelPoints.text = points.ToString();
+
+        
     }
 
 }
