@@ -23,10 +23,6 @@ public class EnemyController : MonoBehaviour
 
 
 
-
-
-
-
     private void Start()
     {
         hud = GameObject.Find("Canvas");
@@ -44,9 +40,6 @@ public class EnemyController : MonoBehaviour
 
         thisObject.GetComponent<Renderer>().material.color = Color.red;
         Flash = 0;
-
-
-
     }
     public void TakeDamageOverTime(float DOT, float numberOfDOT, float delay)
     {
@@ -91,11 +84,11 @@ public class EnemyController : MonoBehaviour
 
 
     /* void DealDamage()
-     {
-         timeBetweenAttacks -= Time.deltaTime;
-         if(timeBetweenAttacks <= 0)
-         {
+    {
+        timeBetweenAttacks -= Time.deltaTime;
+        if(timeBetweenAttacks <= 0)
+        {
 
-         }
-     }*/
+        }
+    }*/
 }
