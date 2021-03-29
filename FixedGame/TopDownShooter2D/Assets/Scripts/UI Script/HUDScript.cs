@@ -54,7 +54,7 @@ public class HUDScript : MonoBehaviour
     void Update()
     {
         FetchValues();
-        skillTreeUI.GetComponent<SkillTreeUI>().levelPoints = points;
+        
     }
 
 
@@ -77,7 +77,7 @@ public class HUDScript : MonoBehaviour
         RoundNumber.text = RoundNumb.ToString();
 
 
-        levelPoints.text = points.ToString();
+        levelPoints.text = skillTreeUI.GetComponent<SkillTreeUI>().levelPoints.ToString();
 
 
     }

@@ -9,6 +9,7 @@ public class SkillTreeUI : MonoBehaviour
     public GameObject player;
     public int levelPoints;
     public GameObject[] buttons;
+    public GameObject hud;
 
 
     public int unlockDashRequired;
@@ -39,6 +40,7 @@ public class SkillTreeUI : MonoBehaviour
                 SkillTreeActive();
             }
         }
+       
     }
     public void Resume()
     {
@@ -59,6 +61,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= unlockDashRequired)
         {
             player.GetComponent<PlayerController>().dashUnlocked = true;
+            
             levelPoints -= unlockDashRequired;
             Debug.Log("TheClick");
         }
@@ -69,6 +72,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= increaseHealthRequired)
         {
             player.GetComponent<PlayerController>().maxHealth += 50;
+            
             levelPoints -= increaseHealthRequired;
 
         }
@@ -79,6 +83,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= increaseSpeedRequired)
         {
             player.GetComponent<PlayerController>().speed += 2;
+            
             levelPoints -= increaseSpeedRequired;
 
         }
@@ -90,6 +95,7 @@ public class SkillTreeUI : MonoBehaviour
         {
             //player.GetComponent<PlayerController>().dashDistance += 20;
             player.GetComponent<PlayerController>().dashSpeed += 20;
+            
             levelPoints -= increaseDashSizeRequired;
 
         }
@@ -100,6 +106,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= healRequired)
         {
             player.GetComponent<PlayerController>().health += 25;
+            
             levelPoints -= healRequired;
 
         }
@@ -110,6 +117,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= unlockReflectorRequired)
         {
             player.GetComponent<PlayerController>().reflectorUnlocked = true;
+           
             levelPoints -= unlockReflectorRequired;
             Debug.Log("TheClick");
         }
@@ -120,6 +128,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= unlockChargedShotRequired)
         {
             player.GetComponent<FireWeapon>().chargedBulletUnlocked = true;
+           
             levelPoints -= unlockChargedShotRequired;
             Debug.Log("TheClick");
         }
@@ -130,6 +139,7 @@ public class SkillTreeUI : MonoBehaviour
         if (levelPoints >= unlockDOTRequired)
         {
             player.GetComponent<FireWeapon>().DOTBulletUnlocked = true;
+            
             levelPoints -= unlockDOTRequired;
             Debug.Log("TheClick");
         }

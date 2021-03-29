@@ -70,13 +70,13 @@ public class EnemyController : MonoBehaviour
     {
         if (health <= 0 && thisObject.tag != "EnemyTank")
         {
-            hud.GetComponent<HUDScript>().points += pointsOnDeath;
+            hud.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             Destroy(gameObject);
 
         }
         if (health <= 0 && thisObject.tag == "EnemyTank")
         {
-            hud.GetComponent<HUDScript>().points += pointsOnDeath;
+            hud.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             dead = true;
         }
 
