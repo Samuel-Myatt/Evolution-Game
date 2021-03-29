@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9a86eb434113849ac6981fa2e79326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   health: 0
   maxHealth: 100
 --- !u!61 &8296208755691011254
@@ -228,6 +229,7 @@ MonoBehaviour:
   stopDis: 5
   retreatDis: 4
   maxTimeBetweenShots: 2
+  player: {fileID: 0}
 --- !u!114 &3334130985207250717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponFirePoint: {fileID: 1050137824692854942}
   bullet: {fileID: 8978826770479696154, guid: 08b92e110e606b04e93b1f133ad15a01, type: 3}
-  bulletForce: 7
+  bulletForce: 8
   gameObject: {fileID: 3334130985207250719}
   chargedBullet: {fileID: 8978826770479696154, guid: 0fe57ab577e28fd4c84be498982acd97, type: 3}
   chargedBulletUnlocked: 0

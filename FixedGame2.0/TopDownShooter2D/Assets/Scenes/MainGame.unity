@@ -9191,21 +9191,21 @@ MonoBehaviour:
   levelPoints: 0
   hud: {fileID: 1944228221}
   buttonSpawns: {fileID: 943929256}
-  unlockDashRequired: 10
-  increaseHealthRequired: 10
-  increaseSpeedRequired: 10
-  increaseDashSizeRequired: 10
-  healRequired: 10
-  unlockReflectorRequired: 10
-  unlockChargedShotRequired: 10
-  unlockDOTRequired: 10
-  unlockMultiShotRequired: 0
-  healEggRequired: 0
-  increaseDashAmount: 0
-  increaseHealthAmount: 0
-  increaseSpeedAmount: 0
-  healAmount: 0
-  healEggAmount: 0
+  unlockDashRequired: 15
+  increaseHealthRequired: 15
+  increaseSpeedRequired: 15
+  increaseDashSizeRequired: 15
+  healRequired: 15
+  unlockReflectorRequired: 30
+  unlockChargedShotRequired: 30
+  unlockDOTRequired: 30
+  unlockMultiShotRequired: 30
+  healEggRequired: 15
+  increaseDashAmount: 1
+  increaseHealthAmount: 25
+  increaseSpeedAmount: 1
+  healAmount: 50
+  healEggAmount: 50
 --- !u!114 &1944228229
 MonoBehaviour:
   m_ObjectHideFlags: 0

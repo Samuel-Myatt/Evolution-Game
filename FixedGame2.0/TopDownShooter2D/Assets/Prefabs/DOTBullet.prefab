@@ -5152,8 +5152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d40a623a4796854a896811d8af3160e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 10
-  DOT: 30
+  dmg: 25
+  DOT: 75
   numberOfDOT: 3
   DOTDelay: 1
   bullet: {fileID: 8978826770479696154}
