@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 
     public float dmg = 25f;
 
-
+    private int Flash = 0;
 
 
     public bool dead = false;
@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
 
 
 
+    
 
 
 
@@ -25,7 +26,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-
+        
         health = maxHealth;
     }
     float calculateHealth()
@@ -37,6 +38,11 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+       
+        thisObject.GetComponent<Renderer>().material.color = Color.red;
+        Flash = 0;
+        
+
 
     }
     public void TakeDamageOverTime(float DOT, float numberOfDOT, float delay)
@@ -70,8 +76,11 @@ public class EnemyController : MonoBehaviour
             dead = true;
         }
 
-
-
+        if(Flash > 25)
+		{
+            thisObject.GetComponent<Renderer>().material.color = Color.white;
+        }
+        Flash++;
     }
 
 
