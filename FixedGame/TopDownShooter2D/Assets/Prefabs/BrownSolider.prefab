@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 3427957349203222333}
   - component: {fileID: 3532091783987963800}
   - component: {fileID: 4508386711438969243}
-  - component: {fileID: 5734062612719744845}
   - component: {fileID: 7986723924493439256}
   - component: {fileID: 1228287968520757384}
   - component: {fileID: 3724952461486559920}
@@ -142,20 +141,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5734062612719744845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3724952461486559921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce9a86eb434113849ac6981fa2e79326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 100
 --- !u!61 &7986723924493439256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -242,7 +227,7 @@ MonoBehaviour:
   pointsOnDeath: 0
   dead: 0
   thisObject: {fileID: 3724952461486559921}
-  skillTreeUI: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!114 &3751431798068665698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,15 +242,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponFirePoint: {fileID: 2053196969587439099}
   bullet: {fileID: 8978826770479696154, guid: 6369e4ffd655383489f39276a0173a62, type: 3}
-  bulletForce: 20
+  bulletForce: 5
   gameObject: {fileID: 3724952461486559921}
   chargedBullet: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}
   chargedBulletUnlocked: 0
+  chargeTime: 0
   chargeTimeNeeded: 1
   chargedBulletForce: 40
   DOTBullet: {fileID: 0}
   DOTBulletUnlocked: 0
   DOTBulletForce: 20
+  multiBulletUnlocked: 0
+  multiBulletAmount: 2
+  multiBulletSpread: 5
 --- !u!1 &6804889113583804035
 GameObject:
   m_ObjectHideFlags: 0

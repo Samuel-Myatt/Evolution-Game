@@ -8,21 +8,21 @@ public class FireWeapon : MonoBehaviour
 
     //Normal bullet.
     public GameObject bullet;
-    private float bulletForce = 20f;
+    public float bulletForce = 20f;
 
     public GameObject gameObject;
 
     //Charged bullet.
     public GameObject chargedBullet;
     public bool chargedBulletUnlocked = false;
-    private float chargeTime = 0f;
+    public float chargeTime = 0f;
     public float chargeTimeNeeded = 0.5f;
-    private float chargedBulletForce = 40f;
+    public float chargedBulletForce = 40f;
 
     //DoT bullet.
     public GameObject DOTBullet;
     public bool DOTBulletUnlocked = false;
-    private float DOTBulletForce = 20f;
+    public float DOTBulletForce = 20f;
 
     //Multi bullets.
     public bool multiBulletUnlocked = false;
