@@ -10,18 +10,15 @@ public class EnemyController : MonoBehaviour
 
     public float dmg = 25f;
 
-    public int pointsOnDeath;
-
-
+    private int Flash = 0;
 
 
     public bool dead = false;
-
     public GameObject thisObject;
-    public GameObject skillTreeUI;
 
 
 
+    
 
 
 
@@ -29,7 +26,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        skillTreeUI = GameObject.Find("SkillTree_UI");
+        
         health = maxHealth;
     }
     float calculateHealth()
@@ -41,6 +38,11 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+       
+        thisObject.GetComponent<Renderer>().material.color = Color.red;
+        Flash = 0;
+        
+
 
     }
     public void TakeDamageOverTime(float DOT, float numberOfDOT, float delay)
@@ -65,18 +67,20 @@ public class EnemyController : MonoBehaviour
     {
         if (health <= 0 && thisObject.tag != "EnemyTank")
         {
-            //skillTreeUI.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
+
             Destroy(gameObject);
 
         }
         if (health <= 0 && thisObject.tag == "EnemyTank")
         {
-            //skillTreeUI.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             dead = true;
         }
 
-
-
+        if(Flash > 25)
+		{
+            thisObject.GetComponent<Renderer>().material.color = Color.white;
+        }
+        Flash++;
     }
 
 
