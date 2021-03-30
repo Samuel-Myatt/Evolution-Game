@@ -10,6 +10,8 @@ TagManager:
   - EnemyTank
   - spawnPointsUI
   - Reflector
+  - teleport
+  - Teleport
   layers:
   - Default
   - TransparentFX

@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: aa71143284fc49f4d96433e62a893968, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   dmg: 20
-  pointsOnDeath: 0
+  pointsOnDeath: 15
   dead: 0
   thisObject: {fileID: 3179637014653728209}
   hud: {fileID: 0}
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponFirePoint: {fileID: 283599510186955419}
-  bullet: {fileID: 8978826770479696154, guid: 6369e4ffd655383489f39276a0173a62, type: 3}
+  bullet: {fileID: 8978826770479696154, guid: dcaa41431e3684f458255d7d2bc07ede, type: 3}
   bulletForce: 6
   gameObject: {fileID: 3179637014653728209}
   chargedBullet: {fileID: 8978826770479696154, guid: df6d3204bcd4b434d9a2e1549fc2381b, type: 3}

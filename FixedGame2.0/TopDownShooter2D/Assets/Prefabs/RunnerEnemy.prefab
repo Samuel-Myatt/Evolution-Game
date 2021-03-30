@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5268618195482180455, guid: 328c74861b32bbf40b9c22c80b12f2ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9a86eb434113849ac6981fa2e79326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   health: 0
   maxHealth: 100
 --- !u!61 &2273397032319868076
@@ -163,11 +164,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 100
-  dmg: 25
-  pointsOnDeath: 10
+  dmg: 10
+  pointsOnDeath: 5
   dead: 0
   thisObject: {fileID: 4822089737761087237}
-  skillTreeUI: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!61 &6940593414803107132
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,4 +209,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   focus: {fileID: 3250187098657985636, guid: d0cae3b2d163434489b755c3bf4c5f85, type: 3}
   timeBetweenAttacks: 2
-  speed: 5
+  speed: 3

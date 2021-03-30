@@ -6,7 +6,8 @@ public class TankEnemy : MonoBehaviour
 {
     public GameObject thisEnemy;
     public GameObject enemy;
-    public float duration = 4f;
+    public GameObject canvas;
+    private float duration = 0.5f;
     public Transform point1;
     public Transform point2;
     public Transform point3;
@@ -22,6 +23,7 @@ public class TankEnemy : MonoBehaviour
         if(thisEnemy.GetComponent<EnemyController>().dead == true)
         {
             StartCoroutine(explode());
+            //canvas.GetComponent<SkillTreeUI>().levelPoints += thisEnemy.GetComponent<EnemyController>().pointsOnDeath;
         }
     }
 
@@ -34,6 +36,7 @@ public class TankEnemy : MonoBehaviour
         Instantiate(enemy, point2.position, transform.rotation);
         Instantiate(enemy, point3.position, transform.rotation);
         Instantiate(enemy, point4.position, transform.rotation);
+        
         Destroy(thisEnemy);
 
         

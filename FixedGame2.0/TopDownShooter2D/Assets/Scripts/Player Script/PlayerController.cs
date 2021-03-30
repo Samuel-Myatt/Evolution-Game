@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     Vector2 mouseAim;
 
     public Rigidbody2D rb;
+    
 
     public float health;
     public float maxHealth = 100f;
 
     public float speed = 2f;
+    public float maxSpeed = 6f;
 
     public float countdown = 5f;
     public float startCountdownTime = 5f;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public float bufferTimer;
     public float startBufferTimer;
 
+    
 
     public int skillPoints = 0;
 
@@ -36,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     public float dashTime;
     public float dashSpeed;
+    public float maxDashSpeed;
     public float distanceBetweenImages;
     public float dashCoolDown;
     private float dashTimeLeft;
@@ -52,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         health = maxHealth;
         countdown = startCountdownTime;
+       
     }
     void Update()
     {
@@ -99,6 +104,14 @@ public class PlayerController : MonoBehaviour
         if (health > maxHealth)
         {
             health = maxHealth;
+        }
+        if (speed > maxSpeed)
+        {
+            speed = maxSpeed;
+        }
+        if(dashSpeed > maxDashSpeed)
+        {
+            dashSpeed = maxDashSpeed;
         }
 
         CheckDash();
@@ -173,4 +186,5 @@ public class PlayerController : MonoBehaviour
             reflectorActive = false;
         }
     }
+   
 }

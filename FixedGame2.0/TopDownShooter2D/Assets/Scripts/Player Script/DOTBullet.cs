@@ -29,7 +29,7 @@ public class DOTBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "Enemy")
+        if (other.transform.tag == "Enemy" || other.transform.tag == "EnemyTank")
         {
             other.GetComponent<EnemyController>().TakeDamage(dmg);
             other.GetComponent<EnemyController>().TakeDamageOverTime(DOT, numberOfDOT, DOTDelay);

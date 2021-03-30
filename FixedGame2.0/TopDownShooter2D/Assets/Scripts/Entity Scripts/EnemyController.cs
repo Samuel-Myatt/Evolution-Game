@@ -70,7 +70,7 @@ public class EnemyController : MonoBehaviour
         }
         if (health <= 0 && thisObject.tag == "EnemyTank")
         {
-            hud.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
+            //hud.GetComponent<SkillTreeUI>().levelPoints += pointsOnDeath;
             dead = true;
         }
 

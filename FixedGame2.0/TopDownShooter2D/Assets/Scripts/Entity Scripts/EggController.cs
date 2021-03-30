@@ -8,7 +8,7 @@ public class EggController : MonoBehaviour
 
     public float health;
 
-    public float maxHealth = 500f;
+    public float maxHealth = 200f;
 
     private void Start()
     {
@@ -25,6 +25,10 @@ public class EggController : MonoBehaviour
             canvas.GetComponent<LoseScript>().setDeathScreenActive();
             //Destroy(gameObject);
             gameObject.SetActive(false);//Deactivate rather than destroy to avoid call errors.
+        }
+        if (health > maxHealth)
+        {
+            health = maxHealth;
         }
     }
 }

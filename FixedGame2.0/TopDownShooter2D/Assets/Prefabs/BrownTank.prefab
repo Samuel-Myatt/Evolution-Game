@@ -113,7 +113,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c74512fb18f76614fa35c6d6dcab95af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9a86eb434113849ac6981fa2e79326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   health: 0
   maxHealth: 100
 --- !u!61 &7356321024610286444
@@ -224,10 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9a22a57bc0b8f459fda5864ad1c3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  stopDis: 3
-  retreatDis: 3
-  maxTimeBetweenShots: 1
+  speed: 2
+  stopDis: 5
+  retreatDis: 2
+  maxTimeBetweenShots: 3
+  player: {fileID: 0}
 --- !u!114 &4283448125583407303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,10 +243,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 300
+  maxHealth: 350
   dmg: 25
+  pointsOnDeath: 15
   dead: 0
   thisObject: {fileID: 4283448125583407301}
+  hud: {fileID: 0}
 --- !u!114 &3335034299647767745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,15 +263,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponFirePoint: {fileID: 1992347912252974916}
   bullet: {fileID: 8978826770479696154, guid: 08b92e110e606b04e93b1f133ad15a01, type: 3}
-  bulletForce: 7
+  bulletForce: 3
   gameObject: {fileID: 4283448125583407301}
   chargedBullet: {fileID: 8978826770479696154, guid: 0fe57ab577e28fd4c84be498982acd97, type: 3}
   chargedBulletUnlocked: 0
+  chargeTime: 0
   chargeTimeNeeded: 1
   chargedBulletForce: 40
   DOTBullet: {fileID: 0}
   DOTBulletUnlocked: 0
   DOTBulletForce: 20
+  multiBulletUnlocked: 0
+  multiBulletAmount: 2
+  multiBulletSpread: 5
 --- !u!114 &2026990797908998891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisEnemy: {fileID: 4283448125583407301}
   enemy: {fileID: 3724952461486559921, guid: 6dfb17eb3d1c3e644abd13db9e30aedc, type: 3}
-  duration: 4
+  canvas: {fileID: 0}
   point1: {fileID: 7983177003462526184}
   point2: {fileID: 110660666071723991}
   point3: {fileID: 3909299016182202333}

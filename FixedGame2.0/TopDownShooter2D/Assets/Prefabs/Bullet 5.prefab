@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 9154860559735810779}
   - component: {fileID: 6002716118944711379}
   m_Layer: 0
-  m_Name: Bullet 2
+  m_Name: Bullet 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 8978826770479696154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.77, y: 0.57780844, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.2}
+  m_LocalScale: {x: 0.15, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 3880492152292338249}
   m_Father: {fileID: 0}
@@ -203,7 +203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38bb41a6f702f8544a2bc57ccea78569, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -274,6 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40409119054333649bb4cf536e363a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 10
+  dmg: 80
   bullet: {fileID: 8978826770479696154}
   lifeDuration: 2
